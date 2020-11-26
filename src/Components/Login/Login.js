@@ -4,9 +4,9 @@ import Register from "./Register";
 function Login() {
     return (
         <div>
-            <div className="login-header">
+            {/* <div className="login-header">
                 <span className="pl-3">Myanmar Tea Leaf</span>
-            </div>
+            </div> */}
             <div className="Login d-flex justify-content-center">
                 <div className="card login-card ">
                     <div className="card-header login-card-header">

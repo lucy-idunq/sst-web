@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 const Link = props =>{
     const {text,to,onClick,style,currentLink} = props

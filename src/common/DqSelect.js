@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select'
 
-const DqDropdown = props => {
+const DqSelect = props => {
     const { data, onChange, placeholder ,className} = props
     return (
 
@@ -18,4 +18,4 @@ const DqDropdown = props => {
     )
 }
 
-export default DqDropdown;
+export default DqSelect;
