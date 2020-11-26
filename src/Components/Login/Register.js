@@ -84,14 +84,14 @@ const Register = props => {
                                 <DqInput id='longitude' placeholder="Longitude"/>
                             </div>
                         </div>
-                        <div >
+                        {/* <div className="border border-danger"> */}
                             {/* <div className="input-group-prepend">
                                 <span className="input-group-text">
                                 <i className="fa fa-user" />
                                 </span>
                             </div> */}
-                                <DqSelect data={data} placeholder="Customer Type" className="form-control"/>
-                        </div>
+                                <DqSelect data={data} placeholder="Customer Type" className="pb-3"/>
+                        {/* </div> */}
                         <div className="input-group form-group  pb-2">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">
