@@ -4,7 +4,6 @@ import Select from 'react-select'
 const DqDropdown = props => {
     const { data, onChange, placeholder ,className} = props
     return (
-
         <Select
             isClearable={true}
             value={data.label}
