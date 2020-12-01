@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import SideBar from './SideBar';
 
 const NavigationBar = props => {
@@ -16,9 +16,9 @@ const NavigationBar = props => {
                 <div className={``} style={{minWidth:'300px'}}>
                     <SideBar sidebarOpen={sidebarOpen} />
                 </div>
-                <div className='flex-grow-1'>
+                {/* <div className='flex-grow-1'>
                     <Navbar Open={Open} />
-                </div>
+                </div> */}
             </div>
         </div>
       

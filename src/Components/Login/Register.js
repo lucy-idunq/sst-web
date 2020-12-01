@@ -1,99 +1,117 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { newRegisterData } from '../../network/registerFetcher'
 import DqInput from '../../common/DqInput'
 import DqSelect from '../../common/DqSelect'
 import DqButton from '../../common/DqButton'
 
 const Register = props => {
-    const data = [
+    const [userName, setuserName] = useState('')
+    const [phone, setphone] = useState('')
+    const [email, setemail] = useState('')
+    const [address, setaddress] = useState('')
+    const [shopName, setshopName] = useState('')
+    const [shopLocation, setshopLocation] = useState('')
+    const [latitude, setlatitude] = useState('')
+    const [longitude, setlongitude] = useState('')
+    const [customerType, setCustomerType] = useState([
         { value: 'wholesale', label: 'Wholesale' },
         { value: 'retail', label: 'Retail' },
+    ])
+    const [selectedCustomerType, setselectedCustomerType] = useState(null)
+    const [password, setpassword] = useState('')
+    const [confirmPassword, setconfirmPassword] = useState('')
 
-    ]
+  
+    const registerSubmit = (e) => {
+        e.preventDefault();
+        let customerType = selectedCustomerType.value 
+        
+        let info = { userName, phone, email, address, shopName, shopLocation, latitude, longitude, customerType, password, confirmPassword }
+        alert(JSON.stringify(info), null, 2)
+
+    }
+ 
     return (
-        <div className="">
-            <form>
-                <div className="form-group row">
-                    <label for='name' className="col-3 col-form-label" >Name </label>
-                    <div className="col-9">
-                        <DqInput id='name' placeholder="Name" />
+        <div>
+            <div className="Login d-flex justify-content-center">
+                <div className="card login-card ">
+                    <div className="card-header login-card-header">
+                        <h3>Register</h3>
+                    </div>
+                    <div className="card-body login-body">
+                        <form onSubmit={e => registerSubmit(e)}>
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fa fa-user" />
+                                <DqInput id='name' placeholder="Name" onChange={(e) => setuserName(e.target.value)} value={userName} value={userName} />
+                            </div>
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fas fa-mobile-alt" />
+                                <DqInput id='phone' placeholder="Phone" onChange={(e) => setphone(e.target.value)} value={phone} />
+                            </div>
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fas fa-envelope-square" />
+                                <DqInput id='email' placeholder="E-mail" type="email" onChange={(e) => setemail(e.target.value)} value={email} />
+                            </div>
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fas fa-address-card" />
+                                <DqInput id='address' placeholder="Address" onChange={(e) => setaddress(e.target.value)} value={address} />
+                            </div>
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fa fa-store-alt" />
+                                <DqInput id='shop' placeholder="Shop-name" onChange={(e) => setshopName(e.target.value)} value={shopName} />
+                            </div>
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fas fa-location-arrow" />
+                                <DqInput id='shoplocation' placeholder="Shop-location" onChange={(e) => setshopLocation(e.target.value)} value={shopLocation} />
+                            </div>
+                            <div className="row">
+                                <div className="input-group form-group col-6 pb-2">
+                                    <InputGroupContainer icon="fa fa-user" />
+                                    <DqInput id='latitude' placeholder="Latitude" onChange={(e) => setlatitude(e.target.value)} value={latitude} />
+                                </div>
+                                <div className="input-group form-group col-6 pb-2">
+                                    <InputGroupContainer icon="fa fa-user" />
+                                    <DqInput id='longitude' placeholder="Longitude" onChange={(e) => setlongitude(e.target.value)} value={longitude} />
+                                </div>
+                            </div>
+
+                            <DqSelect data={customerType} placeholder="Customer Type" className="pb-3" onChange={(e) => setselectedCustomerType(e)} value={selectedCustomerType} />
+
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fa fa-key" />
+                                <DqInput id='password' placeholder="Password" type="password" onChange={(e) => setpassword(e.target.value)} value={password} />
+                            </div>
+
+                            <div className="input-group form-group  pb-2">
+                                <InputGroupContainer icon="fa fa-key" />
+                                <DqInput id='confirm-password' placeholder="Confirm-password" type="password" onChange={(e) => setconfirmPassword(e.target.value)} value={confirmPassword} />
+                            </div>
+
+                            <div className="d-flex justify-content-around">
+                                <DqButton text="Register" type="submit" />
+                                <DqButton text="Cancel" />
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div className="form-group row">
-                    <label for='phone' className="col-3 col-form-label" >Phone </label>
-                    <div className="col-9">
-                        <DqInput id='phone' placeholder="Phone" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='email' className="col-3 col-form-label" >Email </label>
-                    <div className="col-9">
-                        <DqInput id='email' placeholder="E-mail" type="email" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='address' className="col-3 col-form-label" >Address </label>
-                    <div className="col-9">
-                        <DqInput id='address' placeholder="Address" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='shop' className="col-3 col-form-label" >Shop Name </label>
-                    <div className="col-9">
-                        <DqInput id='shop' placeholder="Shop-name" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='shoplocation' className="col-3 col-form-label" >Shop Location </label>
-                    <div className="col-9">
-                        <DqInput id='shoplocation' placeholder="Shop-location" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <div className=" col-6">
-                        <div className="row">
-                            <label for='latitude' className=" col-5 col-form-label" >Latitude </label>
-                            <div className=" col-7">  <DqInput id='latitude' /></div>
-                        </div>
-                    </div>
-                    <div className=" col-6">
-                        <div className="row">
-                            <label for='longitude' className=" col-5 col-form-label" >Longitude </label>
-                            <div className=" col-7">  <DqInput id='longitude' /></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='customer-type' className="col-3 col-form-label" >Select customer</label>
-                    <div className="col-9">
-                        <DqSelect data={data} placeholder="Customer Type" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='password' className="col-3 col-form-label" >Password </label>
-                    <div className="col-9">
-                        <DqInput id='password' placeholder="Password" type="password" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='confirm-password' className="col-3 col-form-label" >Confirm Password</label>
-                    <div className="col-9">
-                        <DqInput id='confirm-password' placeholder="Confirm-password" type="password" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label for='description' className="col-3 col-form-label" >Description</label>
-                    <div className="col-9">
-                        <textarea id="description" className="form-control" style={{ boxShadow: 'none' }} />
-                    </div>
-                </div>
-                <div className="d-flex justify-content-around">
-                    <DqButton text="Register" />
-                    <DqButton text="Cancel" />
-                </div>
-            </form>
+            </div>
         </div>
     )
 }
 
+const InputGroupContainer = ({ icon }) => {
+    return (
+        <div className="input-group-prepend">
+            <span className="input-group-text">
+                <i className={icon} />
+            </span>
+        </div>
+    )
+}
+
+// const customerType = [
+//         { value: 'wholesale', label: 'Wholesale' },
+//         { value: 'retail', label: 'Retail' },
+//     ]
 
 export default Register;

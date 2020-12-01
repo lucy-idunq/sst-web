@@ -33,10 +33,13 @@
     <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous" />
+    <!-- material icon cdn -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./Css/login.css" />
     <link rel="stylesheet" href="./Css/style.css" />
+    <link rel="stylesheet" href="./Css/sidebar.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -59,5 +62,37 @@
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(document)
+          .on("click", function(e) {
+            if (e.target.matches(".parent_class,.parent_class>a")) {
+              $("ul").removeClass("in");
+
+              $("#sidebar")
+                .find("a")
+                .removeClass("active");
+
+              $("#sidebar")
+                .find("a")
+                .attr("aria-expanded", "false");
+
+              e.target.classList.toggle("active");
+            } else if (e.target.matches(".child_class,.child_class>a")) {
+              $("#sidebar")
+                .find("a")
+                .removeClass("active");
+              e.target.classList.toggle("active");
+            }
+          })
+          .on("click", "#sidebarCollapse", function() {
+            $("#sidebar, #content").toggleClass("active");
+            $(".collapse.in").toggleClass("in");
+            $("a[aria-expanded=true]").attr("aria-expanded", "false");
+          });
+        });
+        </script>
+        <script src="./js/script.js"></script>
   </body>
 </html>

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
 import { loginFetcher } from '../../network/loginFetcher'
 
 
-function Login() {
+const Login = props => {
     const [name, setName] = useState('')
     const [pwd, setPwd] = useState('')
 
     const _onClickLogIn = (name, pwd) => {
         let info = { name, pwd }
         loginFetcher(info, (error, data) => {
-            console.log(data)
             if (error) {
                  console.log(error)
                 alert(JSON.stringify(data.message),null,2)
@@ -18,15 +18,16 @@ function Login() {
                 alert(JSON.stringify(data.message),null,2)
                 setName('')
                 setPwd('')
+                props.history.replace(`/dashboard`)
             }
         })
     }
 
     return (
         <div>
-            <div className="login-header">
+            {/* <div className="login-header">
                 <span className="pl-3">Myanmar Tea Leaf</span>
-            </div>
+            </div> */}
             <div className="Login d-flex justify-content-center">
                 <div className="card login-card ">
                     <div className="card-header login-card-header">
@@ -81,6 +82,7 @@ function Login() {
                                     value="Register"
                                     id="register_btn"
                                     className="btn register_btn"
+                                    onClick={()=>props.history.push('/register')}
                                 />
                             </div>
                         </form>

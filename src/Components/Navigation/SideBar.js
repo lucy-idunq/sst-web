@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-const SideBar = props => {
-    const viewHeight = window.outerHeight;
-    const Width = window.innerWidth;
-    const { sidebarOpen } = props
-
-
+function SideBar() {
     return (
-        <div className=" " style={{ height: viewHeight, border: '1px solid #000' }}>
-            <div className="h-100 d-block">
-                    {
-                        sidebarOpen ?
-                            <div className="p-2">
-                                <div >{"username"}</div>
-                                <div >{"role"}</div>
-                            </div>
-                            : 
-                            <div> </div>
-
-                    }
-
-                <SidebarItem sidebarOpen={sidebarOpen} title="Dashboard" icon="fas fa-home" />
-                <SidebarItem sidebarOpen={sidebarOpen} title="Dashboard" icon="fas fa-home" />
-                <SidebarItem sidebarOpen={sidebarOpen} title="Dashboard" icon="fas fa-home" />
-                <SidebarItem sidebarOpen={sidebarOpen} title="Dashboard" icon="fas fa-home" />
-            </div>
-
-        </div>
-
-
+        <React.Fragment>
+            <div className="wrapper">
+                <nav id="sidebar" className="sidebar">
+                <div className="sidebar-header">
+                    <img alt="logo" className="logostyle" src="assets/image/Logo.jpg" />
+                    <br />
+                    <span className="fontWhite">Admin</span>
+                    <p className="text-sm mb-0">Manager</p>
+                </div>
+                <ul className="components">
+                    <li className="parent_class ">
+                        <Link to="/Dashboard">
+                            <i className="fa fa-th-large mr-2" />{" "}
+                            Dashboard
+                        </Link>
+                    </li>
+                    <li className="parent_class ">
+                        <Link to="/items">
+                            <i className="fa fa-th-large mr-2" />{" "}
+                            Items
+                        </Link>
+                    </li>
+                    <li className="parent_class ">
+                    <Link to="/Dashboard">
+                        <i className="fa fa-th-large mr-2" />{" "}
+                        Orders
+                    </Link>
+                    </li>
+                    <li className="parent_class ">
+                    <Link to="/Dashboard">
+                        <i className="fa fa-th-large mr-2" />{" "}
+                        Items
+                    </Link>
+                    </li>
+                </ul>
+                </nav>
+                </div>
+        </React.Fragment>
     )
 }
 
-const SidebarItem = ({ sidebarOpen, title, icon }) => {
-    return (
-        <div className='d-flex flex-row justify-content-between align-items-center py-3 px-2'
-            style={{ borderBottom: '1px solid #000000', outline: '1px ' }}
-        >
-            <div className="text-center"><i class={`${icon}`}></i></div>
-            <div> {sidebarOpen ? `${title}` : null}</div>
-
-        </div>
-    )
-}
-
-export default SideBar;
+export default SideBar
