@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Input = props => {
-    const { id, style, placeholder, type, value, width, className } = props
+    const { id, style, placeholder, type, value, width, className, onChange, pwdViewer } = props
+
+    const [pwdView, setpwdView] = useState(false)
 
     const defaultStyle = {
-        // height:`${height}`,
         boxShadow: 'none',
         // outline:'none',
         // border:'1px solid #eeee',
@@ -19,8 +20,14 @@ const Input = props => {
             placeholder={placeholder}
             className={`form-control form-rounded ${className}`}
             type={type === undefined ? 'text' : `${type}`}
+            onChange={onChange}
             value={value}
+
         />
+
+
+
+
 
     )
 }

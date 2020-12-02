@@ -14,19 +14,25 @@ function SideBar() {
                 </div>
                 <ul className="components">
                     <li className="parent_class ">
-                        <Link to="/Dashboard">
+                        <Link to="/dashboard">
                             <i className="fa fa-th-large mr-2" />{" "}
                             Dashboard
                         </Link>
                     </li>
                     <li className="parent_class ">
-                    <Link to="/Dashboard">
+                        <Link to="/items">
+                            <i className="fa fa-th-large mr-2" />{" "}
+                            Items
+                        </Link>
+                    </li>
+                    <li className="parent_class ">
+                    <Link to="/dashboard">
                         <i className="fa fa-th-large mr-2" />{" "}
                         Orders
                     </Link>
                     </li>
                     <li className="parent_class ">
-                    <Link to="/Dashboard">
+                    <Link to="/dashboard">
                         <i className="fa fa-th-large mr-2" />{" "}
                         Items
                     </Link>

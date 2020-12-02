@@ -1,21 +1,22 @@
 import React from 'react'
 import Select from 'react-select'
 
-const DqSelect = props => {
-    const { data, onChange, placeholder ,className} = props
+const ref = React.createRef()
+
+const DqSelect = (props) =>{
+    const { data, onChange, placeholder, className, value, } = props
     return (
-
-        <Select
-            isClearable={true}
-            value={data.label}
-            onChange={onChange}
-            options={data}
-            placeholder={placeholder}
-            style={{ boxShadow: 'none', outline: 'none' }}
-            className={className}
-        />
-
-    )
+                <Select
+                    ref={ref}
+                    isClearable={true}
+                    value={value}
+                    onChange={onChange}
+                    options={data}
+                    placeholder={placeholder}
+                    style={{ boxShadow: 'none', outline: 'none' }}
+                    className={className}
+                />
+            )
 }
 
 export default DqSelect;

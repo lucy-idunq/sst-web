@@ -1,10 +1,8 @@
 import React from 'react'
 
-function Dashboard() {
-    return (
-        <div>
-            Dashboard
-        </div>
+const Dashboard = props =>{
+    return(
+        <div><h1>dasboard </h1></div>
     )
 }
 
