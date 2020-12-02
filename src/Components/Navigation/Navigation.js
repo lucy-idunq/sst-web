@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar';
+import AppRoute from '../../AppRoute';
+import Navbar from './NavBar';
 import SideBar from './SideBar';
 
 const NavigationBar = props => {
@@ -11,16 +12,24 @@ const NavigationBar = props => {
 
 
     return (
-        <div className="">
+        <div className="container-fluid">
             <div className="d-flex flex-row">
-                <div className={``} style={{ minWidth: '300px' }}>
+                <div className='' style={{ minWidth: '300px' }}>
                     <SideBar sidebarOpen={sidebarOpen} />
                 </div>
                 <div className='flex-grow-1'>
-                    <Navbar Open={Open} />
+                    <div className="border border-danger">
+
+                        <Navbar Open={Open} />
+                       
+                    </div>
                 </div>
+
+
             </div>
+
         </div>
+
 
 
     )

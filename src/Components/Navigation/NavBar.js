@@ -4,8 +4,8 @@ function NavBar() {
     return (
         <React.Fragment>
             <div id = 'content'>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light ">
-                <div className="container-fluid ">
+                <nav className="navbar navbar-expand-lg navbar-light bg-secondary ">
+                {/* <div className="container-fluid "> */}
                     <div className="col-2 p-0">
                         <button
                         type="button"
@@ -25,7 +25,7 @@ function NavBar() {
                         </div>
                     </div>
                     
-                </div>
+                {/* </div> */}
                 </nav>
             </div>
         </React.Fragment>

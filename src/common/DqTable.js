@@ -18,7 +18,7 @@ const Table = props => {
     }
 
     return (
-        <div style={{ maxWidth: "100%" }}>
+        <div style={{ width: "100%" }}>
             <MaterialTable
                 title={title}
                 columns={columns}
