@@ -5,7 +5,7 @@ import DqTable from '../../common/DqTable'
 const Order = props => {
     return (
         <div>
-            <DqTable columns={columns} customData={customData} title={"Customer Table"} />
+            <DqTable columns={columns} customData={customData} title={"Orders Table"} />
         </div>
     )
 }

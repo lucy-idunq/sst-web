@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import SideBar from './SideBar';
 import NavBar from './NavBar';
 
-import AppRoute from '../../AppRoute.js'
+import AppRoute from './AppRoute.js'
 
 const NavContainer = props => {
     const [sidebarOpen, setsidebarOpen] = useState(false)

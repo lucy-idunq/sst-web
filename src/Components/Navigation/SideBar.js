@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { SidebarData } from './SidebarData'
 import logo from '../../upload/sst.jpg'
 
@@ -16,7 +16,7 @@ const SideBar = props => {
                     {
                         SidebarData.map((v, k) => {
                             return (
-                               <Link to={v.link} style={{color:'#fff'}}><SideBarItem icon={v.icon} title={v.title} isHover /> </Link> 
+                                <Link to={v.link} style={{ color: '#fff', textDecoration: 'none' }}><SideBarItem icon={v.icon} title={v.title} isHover /> </Link>
                             )
                         })
                     }
