@@ -10,7 +10,6 @@ const NavigationBar = props => {
         setsidebarOpen(!sidebarOpen)
     }
 
-
     return (
         <div className="container-fluid">
             <div className="d-flex flex-row">
@@ -24,7 +23,6 @@ const NavigationBar = props => {
                        
                     </div>
                 </div>
-
 
             </div>
 
