@@ -4,6 +4,7 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import StoreIcon from '@material-ui/icons/Store';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 function SideBar() {
     return (
@@ -35,10 +36,16 @@ function SideBar() {
                         Orders
                     </Link>
                     </li>
+                    <li>
+                    <Link to="/dashboard">
+                        <DescriptionIcon className="mr-2"/>{" "}
+                        Invoice
+                    </Link> 
+                    </li>
                     <li className="parent_class ">
                     <Link to="/dashboard">
                         <StoreIcon className="mr-2" />{" "}
-                        Stock List
+                        Inventory Stock
                     </Link>
                     </li>
                 </ul>
