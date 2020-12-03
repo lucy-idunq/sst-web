@@ -18,7 +18,7 @@ const Login = props => {
                 alert(JSON.stringify(data.message),null,2)
                 setName('')
                 setPwd('')
-                props.history.replace(`/home`)
+                props.history.replace(`/`)
             }
         })
     }

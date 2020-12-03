@@ -1,37 +1,30 @@
 import React from 'react'
 import ReorderIcon from '@material-ui/icons/Reorder';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-function NavBar() {
+const NavBar = props => {
+    const { setsidebarOpen, sidebarOpen } = props
     return (
-        <React.Fragment>
-            <div id = 'content'>
-                <nav className="navbar navbar-expand-lg navbar-light bg-secondary ">
-                {/* <div className="container-fluid "> */}
-                    <div className="col-2 p-0">
-                        <button
-                        type="button"
-                        id="sidebarCollapse"
-                        className="btn btn-dark"
-                        >
-                        < ReorderIcon/>
-                        </button>
-                    </div>
-                    <div className="col-10 ">
-                        <div className="row">
-                            <div className="nav-menus col-12 text-right">
-                                <span>Language</span>
-                                <span ><NotificationsIcon className="ml-2"/></span>
-                                <span ><button className= "btn btn-secondary">Logout</button></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                {/* </div> */}
-                </nav>
+        <div className="d-flex flex-grow-1 align-items-center navbar bg-secondary text-light">
+            <div className="rounded p-1" style={{ cursor: 'pointer',background:'#2F4050' }} onClick={() => setsidebarOpen(!sidebarOpen)}>
+                <ReorderIcon />
             </div>
-        </React.Fragment>
+            <div className="d-flex align-items-center">
+                <div > <NotificationsIcon /></div>
+                <div className="dropdown ">
+                    <div className="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <AccountCircleIcon />
+                    </div>
+                    <ul className="dropdown-menu dropdown-menu-right">
+                        <li><div class="dropdown-item">User Profile</div></li>
+                        <div className="dropdown-divider" />
+                        <li><div class="dropdown-item">Logout</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     )
 }
 
-export default NavBar
+export default NavBar;

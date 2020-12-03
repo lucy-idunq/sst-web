@@ -1,11 +1,14 @@
 import React from 'react';
-import AppRoute from './AppRoute';
-import Navigation from './Components/Navigation/Navigation';
+// import AppRoute from './Components/Navigation/AppRoute';
+import NavContainer from './Components/Navigation/NavContainer';
+// import Login from './Components/Login/Login'
 
 function App() {
   return (
-    <div >
-      <Navigation />
+    <div className="container-fluid">
+      {/* <Login/> */}
+      <NavContainer />
+      
     </div>
   );
 }

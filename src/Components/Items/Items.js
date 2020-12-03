@@ -24,6 +24,7 @@ const columns = [
         lookup: { 1: 'packing', 2: 'small' },
     },
     { title: 'Price', field: 'price', },
+    { title: 'Action' }
 
 ]
 
