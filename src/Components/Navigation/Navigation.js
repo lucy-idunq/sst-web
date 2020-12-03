@@ -1,38 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react'
 import AppRoute from '../../AppRoute';
-import Navbar from './NavBar';
+import NavBar from './NavBar';
 import SideBar from './SideBar';
 
-const NavigationBar = props => {
-    const [sidebarOpen, setsidebarOpen] = useState(false)
-
-    const Open = () => {
-        setsidebarOpen(!sidebarOpen)
-    }
-
-
+function Navigation() {
     return (
         <div className="container-fluid">
-            <div className="d-flex flex-row">
-                <div className='' style={{ minWidth: '300px' }}>
-                    <SideBar sidebarOpen={sidebarOpen} />
-                </div>
-                <div className='flex-grow-1'>
-                    <div className="border border-danger">
-
-                        <Navbar Open={Open} />
-                       
-                    </div>
-                </div>
-
-
-            </div>
-
+            <SideBar />
+            <NavBar />
+            <AppRoute />
         </div>
-
-
-
     )
 }
 
-export default NavigationBar;
+export default Navigation

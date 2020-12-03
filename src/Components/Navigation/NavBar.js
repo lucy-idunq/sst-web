@@ -1,4 +1,6 @@
 import React from 'react'
+import ReorderIcon from '@material-ui/icons/Reorder';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 function NavBar() {
     return (
@@ -10,16 +12,16 @@ function NavBar() {
                         <button
                         type="button"
                         id="sidebarCollapse"
-                        className="btn btn-info"
+                        className="btn btn-dark"
                         >
-                        <i className="fa fa-align-justify" />
+                        < ReorderIcon/>
                         </button>
                     </div>
                     <div className="col-10 ">
                         <div className="row">
                             <div className="nav-menus col-12 text-right">
                                 <span>Language</span>
-                                <span ><i className="fas fa-bell pr-4 pl-4"></i></span>
+                                <span ><NotificationsIcon className="ml-2"/></span>
                                 <span ><button className= "btn btn-secondary">Logout</button></span>
                             </div>
                         </div>

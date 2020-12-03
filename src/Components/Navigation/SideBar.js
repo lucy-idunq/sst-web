@@ -1,5 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
+import StoreIcon from '@material-ui/icons/Store';
 
 function SideBar() {
     return (
@@ -7,34 +11,34 @@ function SideBar() {
             <div className="wrapper">
                 <nav id="sidebar" className="sidebar">
                 <div className="sidebar-header">
-                    <img alt="logo" className="logostyle" src="assets/image/Logo.jpg" />
+                    <img alt="logo" className="logostyle" src="Image/sst.jpg" />
                     <br />
                     <span className="fontWhite">Admin</span>
                     <p className="text-sm mb-0">Manager</p>
                 </div>
                 <ul className="components">
                     <li className="parent_class ">
-                        <Link to="/dashboard">
-                            <i className="fa fa-th-large mr-2" />{" "}
+                        <Link to="/">
+                            <DashboardIcon className="mr-2"/>{" "}
                             Dashboard
                         </Link>
                     </li>
                     <li className="parent_class ">
                         <Link to="/items">
-                            <i className="fa fa-th-large mr-2" />{" "}
+                            <FormatListBulletedIcon className="mr-2" />{" "}
                             Items
                         </Link>
                     </li>
                     <li className="parent_class ">
                     <Link to="/dashboard">
-                        <i className="fa fa-th-large mr-2" />{" "}
+                        <ShoppingBasketIcon className="mr-2"/>{" "}
                         Orders
                     </Link>
                     </li>
                     <li className="parent_class ">
                     <Link to="/dashboard">
-                        <i className="fa fa-th-large mr-2" />{" "}
-                        Items
+                        <StoreIcon className="mr-2" />{" "}
+                        Stock List
                     </Link>
                     </li>
                 </ul>

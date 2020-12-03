@@ -12,15 +12,16 @@ const AppRoute = props => {
     const routeName = ['/']
    
     return (
-        <div>
-            {!routeName.includes(history.location.pathname) && <Navigation />}
+        <div id="sub-content">
+            {/* {!routeName.includes(history.location.pathname) && <Navigation />} */}
            
             <Switch>
-                <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/items" component={Items} />
+                <Route path="/"  component={Dashboard} />
                 <Route path='/home' component={Navigation} />
-                <Route path="/items" component={Items} />
+                
                 <Route path="/register" component={Register} />
-                <Route path="/" component={Login} />
+                <Route path="/Login" component={Login} />
             </Switch>
           
 

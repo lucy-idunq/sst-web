@@ -31,7 +31,7 @@ const Table = props => {
                     selection: false,
                     actionsColumnIndex: -1,
                     headerStyle: {
-                        backgroundColor: '#01579b',
+                        backgroundColor: '#adb5bd',
                         color: '#FFF'
                     },
                     rowStyle: rowData => ({

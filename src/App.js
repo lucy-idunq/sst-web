@@ -1,10 +1,11 @@
-
+import React from 'react';
 import AppRoute from './AppRoute';
+import Navigation from './Components/Navigation/Navigation';
 
 function App() {
   return (
     <div >
-      <AppRoute />
+      <Navigation />
     </div>
   );
 }

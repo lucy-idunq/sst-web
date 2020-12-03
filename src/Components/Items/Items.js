@@ -6,7 +6,7 @@ import ph1 from '../../upload/luvph.jpg'
 const Items = props => {
 
     return (
-        <div>
+        <div className="pt-4">
             <DqTable customData={customData} columns={columns} title={"Item List"} />
         </div>
     )
