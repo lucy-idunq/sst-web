@@ -16,7 +16,9 @@ const SideBar = props => {
                     {
                         SidebarData.map((v, k) => {
                             return (
-                                <Link to={v.link} style={{ color: '#fff', textDecoration: 'none' }}><SideBarItem icon={v.icon} title={v.title} isHover /> </Link>
+                                <Link to={v.link} style={{ color: '#fff', textDecoration: 'none' }}>
+                                    <SideBarItem icon={v.icon} title={v.title} isHover />
+                                </Link>
                             )
                         })
                     }
