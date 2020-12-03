@@ -6,7 +6,7 @@ import ph1 from '../../upload/luvph.jpg'
 const Items = props => {
 
     return (
-        <div>
+        <div className="pt-4">
             <DqTable customData={customData} columns={columns} title={"Item List"} />
         </div>
     )
@@ -24,6 +24,7 @@ const columns = [
         lookup: { 1: 'packing', 2: 'small' },
     },
     { title: 'Price', field: 'price', },
+    { title: 'Action' }
 
 ]
 

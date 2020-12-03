@@ -5,24 +5,25 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import Items from './Components/Items/Items';
 import Login from './Components/Login/Login';
 import Register from './Components/Login/Register';
-import Navigation from './Components/Navigation/Navigation.js'
+import NavContainer from './Components/Navigation/NavContainer.js'
 
 const AppRoute = props => {
     const { history } = props
     const routeName = ['/']
-   
+
     return (
-        <div>
-            {!routeName.includes(history.location.pathname) && <Navigation />}
-           
+        <div id="sub-content">
+            {/* {!routeName.includes(history.location.pathname) && <Navigation />} */}
+
             <Switch>
-                <Route path="/dashboard" exact component={Dashboard} />
-                <Route path='/home' component={Navigation} />
                 <Route path="/items" component={Items} />
+                <Route path="/dashboard" component={Dashboard} />
+                <Route path='/home' component={NavContainer} />
+
                 <Route path="/register" component={Register} />
-                <Route path="/" component={Login} />
+                <Route path="/Login" component={Login} />
             </Switch>
-          
+
 
         </div>
 

@@ -1,47 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
+import { SidebarData } from './SidebarData'
+import logo from '../../upload/sst.jpg'
 
-function SideBar() {
+const SideBar = props => {
+    const [isHover, setisHover] = useState(false)
+    // console.log(isHover)
     return (
-        <React.Fragment>
-            <div className="wrapper">
-                <nav id="sidebar" className="sidebar">
-                <div className="sidebar-header">
-                    <img alt="logo" className="logostyle" src="assets/image/Logo.jpg" />
-                    <br />
-                    <span className="fontWhite">Admin</span>
-                    <p className="text-sm mb-0">Manager</p>
+        <div style={{ height: '100vh' }}>
+            <div className=" h-100 " style={{ backgroundColor: '#2F4050', color: '#fff' }}>
+                <div className="d-flex flex-column " onMouseEnter={() => setisHover(!isHover)} onMouseLeave={() => setisHover(false)} >
+                    <div className="text-center pt-4">
+                        <img src={logo} alt="logo" className="rounded-circle" width={60} />
+                    </div>
+                    {
+                        SidebarData.map((v, k) => {
+                            return (
+                               <Link to={v.link} style={{color:'#fff'}}><SideBarItem icon={v.icon} title={v.title} isHover /> </Link> 
+                            )
+                        })
+                    }
                 </div>
-                <ul className="components">
-                    <li className="parent_class ">
-                        <Link to="/dashboard">
-                            <i className="fa fa-th-large mr-2" />{" "}
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li className="parent_class ">
-                        <Link to="/items">
-                            <i className="fa fa-th-large mr-2" />{" "}
-                            Items
-                        </Link>
-                    </li>
-                    <li className="parent_class ">
-                    <Link to="/dashboard">
-                        <i className="fa fa-th-large mr-2" />{" "}
-                        Orders
-                    </Link>
-                    </li>
-                    <li className="parent_class ">
-                    <Link to="/dashboard">
-                        <i className="fa fa-th-large mr-2" />{" "}
-                        Items
-                    </Link>
-                    </li>
-                </ul>
-                </nav>
-                </div>
-        </React.Fragment>
+            </div>
+        </div>
     )
 }
 
-export default SideBar
+const SideBarItem = ({ icon, title, isHover }) => {
+    return (
+        <div className="d-flex flex-row justify-content-center align-items-center  p-3 " style={{ cursor: `${isHover && 'pointer'}`, borderBottom: '1px solid #eee' }}>
+            <div className="text-left">{icon}</div>
+            <div className="px-4 d-none d-lg-inline flex-2">{title}</div>
+        </div>
+    )
+}
+
+export default SideBar;

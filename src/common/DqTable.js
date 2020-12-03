@@ -31,21 +31,13 @@ const Table = props => {
                     selection: false,
                     actionsColumnIndex: -1,
                     headerStyle: {
-                        backgroundColor: '#01579b',
+                        backgroundColor: '#adb5bd',
                         color: '#FFF'
                     },
                     rowStyle: rowData => ({
                         backgroundColor: (selectedRow === rowData.tableData.id) ? '#EEE' : '#FFF'
                     })
                 }}
-                actions={[
-                    {
-                      icon: 'save',
-                      tooltip: 'Save User',
-                      onClick: (event, rowData) => alert("You saved " + rowData.name)
-                    },
-                   
-                  ]}
                 detailPanel={rowData => {
                     return (
                         <h4>hello,{rowData.name}</h4>
@@ -54,31 +46,45 @@ const Table = props => {
                 onRowClick={(event, rowData, togglePanel) => togglePanel()}
                 // onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.id))}
 
-                editable={{
-                    onRowAdd: (newData) => {
-                        addNewTableData(newData)
+                localization={{
+                    header: {
+                        actions: 'Actions'
                     },
-                    onRowUpdate: (newData, oldData) =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                const dataUpdate = [...data];
-                                const index = oldData.tableData.id;
-                                dataUpdate[index] = newData;
-                                setData([...dataUpdate]);
-                                resolve();
-                            }, 1000)
-                        }),
-                    onRowDelete: oldData =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                const dataDelete = [...data];
-                                const index = oldData.tableData.id;
-                                dataDelete.splice(index, 1);
-                                setData([...dataDelete]);
-                                resolve()
-                            }, 1000)
-                        }),
                 }}
+
+                //  actions={[
+                    // {
+                    //   icon: 'save',
+                    //   tooltip: 'Save User',
+                    //   onClick: (event, rowData) => alert("You saved " + rowData.name)
+                    // },
+                   
+                //   ]}
+                // editable={{
+                    // onRowAdd: (newData) => {
+                    //     addNewTableData(newData)
+                    // },
+                    // onRowUpdate: (newData, oldData) =>
+                    //     new Promise((resolve, reject) => {
+                    //         setTimeout(() => {
+                    //             const dataUpdate = [...data];
+                    //             const index = oldData.tableData.id;
+                    //             dataUpdate[index] = newData;
+                    //             setData([...dataUpdate]);
+                    //             resolve();
+                    //         }, 1000)
+                    //     }),
+                    // onRowDelete: oldData =>
+                    //     new Promise((resolve, reject) => {
+                    //         setTimeout(() => {
+                    //             const dataDelete = [...data];
+                    //             const index = oldData.tableData.id;
+                    //             dataDelete.splice(index, 1);
+                    //             setData([...dataDelete]);
+                    //             resolve()
+                    //         }, 1000)
+                    //     }),
+                // }}
             />
         </div>
 

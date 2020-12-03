@@ -30,6 +30,7 @@
 
   .logostyle {
     width: 50px;
+    /* height: 40px; */
     border-radius: 50%;
     margin-bottom: 10px;
   }
@@ -69,6 +70,7 @@
     padding: 10px;
     font-size: 0.9em;
     display: block;
+    color: #afbcca;
   }
   
   #sidebar ul li a:hover {
