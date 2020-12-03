@@ -17,7 +17,7 @@ const AppRoute = props => {
     console.log(routeName.includes(history.location.pathname))
     return (
         <div >
-            {routeName.includes(history.location.pathname) && <NavContainer />}
+            {/* {routeName.includes(history.location.pathname) && <NavContainer />} */}
 
             <Switch>
 
