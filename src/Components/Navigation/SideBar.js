@@ -16,8 +16,8 @@ const SideBar = props => {
                     {
                         SidebarData.map((v, k) => {
                             return (
-                                <Link to={v.link} style={{ color: '#fff', textDecoration: 'none' }}>
-                                    <SideBarItem icon={v.icon} title={v.title} isHover />
+                                <Link to={v.link} style={{ color: '#fff', textDecoration: 'none' }} key={k}>
+                                    <SideBarItem  icon={v.icon} title={v.title} isHover />
                                 </Link>
                             )
                         })
@@ -28,11 +28,11 @@ const SideBar = props => {
     )
 }
 
-const SideBarItem = ({ icon, title, isHover }) => {
+const SideBarItem = ({ icon, title, isHover,  }) => {
     return (
-        <div className="d-flex flex-grow-1 p-3" style={{ cursor: `${isHover && 'pointer'}`, borderBottom: '1px solid #eee' }}>
-            <div className="px-1">{icon}</div>
-            <div className="px-4 d-none d-lg-inline">{title}</div>
+        <div  className="d-flex justify-content-center justify-content-lg-start p-4 " style={{ cursor: `${isHover && 'pointer'}`, borderBottom: '1px solid #eee' }}>
+            <div className="border">{icon}</div>
+            <div className="flex-grow-1 d-none d-md-none d-lg-inline border border-danger">{title}</div>
         </div>
     )
 }

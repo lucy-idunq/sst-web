@@ -2,3 +2,88 @@
 [1127/090148.735:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1127/114347.518:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1204/083224.220:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100127.987:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/100637.110:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/101127.992:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\8b7644d7-0b37-4889-9cb5-fcb948bb6238.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\91291e34-6e12-4492-ac09-4a4cb7c6961c.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\31c63c08-a467-4bb8-a50e-d7f8a42cae8e.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\cdfabf2f-02a6-4669-ae14-f228f18bf6af.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\f4a58437-284b-4ab5-93b7-57dc316f86e3.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\2cd848fc-2817-4c0a-98c5-2fef78903f42.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\6150b216-ea69-4d1b-bbaa-baebf0652027.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\4524b81a-eeed-4a23-ab44-b86a4db74173.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\37eddde2-40d4-48a2-9e4a-625cf8a8fd23.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\19823ee1-c9bc-467e-bca5-f186d92f5da0.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\561c908b-d3d7-411b-a015-5c46a2491ac0.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\1b314601-96a6-4d3e-8324-989a4c1aa8dd.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\8dd3bf62-58f9-44b8-b51c-d86fd1362796.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\63b55319-16d8-4cb3-afb7-85ba7cbe7d6a.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\2564dfa4-f344-48d5-8fe9-92174e7da17d.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\7eaadc8f-3f85-4057-b91c-aa75400c0e44.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\dd66e53e-ba56-4716-a0e6-ebc05b6b6aeb.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\44b14776-9020-45a0-af47-a77e358bca97.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\c9f2e57b-4d2e-4cb5-ae4a-2a0153f2e7b6.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\d96cf0ec-32c0-4343-ab42-2d55202c74b1.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\6d86e967-922c-4ebf-9f41-3a3f1306e7a3.dmp: The system cannot find the file specified. (0x2)
+[1204/101127.993:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
