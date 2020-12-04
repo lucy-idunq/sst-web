@@ -1,13 +1,20 @@
 import React from 'react';
-import { IMG_SERVER } from '../../network/api.config'
-import DqTable from '../../common/DqTable';
+// import { IMG_SERVER } from '../../network/api.config'
+import DqDataTable from '../../common/DqDataTable'
 import ph1 from '../../upload/luvph.jpg'
+
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const Items = props => {
 
     return (
-        <div className="pt-4">
-            <DqTable customData={customData} columns={columns} title={"Item List"} />
+        <div>
+            <DqDataTable
+                title={"Item table"}
+                columns={columns}
+                data={customData}
+            />
         </div>
     )
 }
@@ -15,21 +22,42 @@ const Items = props => {
 
 export default Items;
 const columns = [
-
-    { title: 'Name', field: 'name' },
-    { title: 'Image', field: 'imageUrl', render: rowData => <img src={rowData.imageUrl} style={{ width: 40, borderRadius: '50%' }} />, filtering: false },
     {
-        title: 'Package',
-        field: 'packageType',
-        lookup: { 1: 'packing', 2: 'small' },
+        name: 'Name',
+        selector: 'name'
     },
-    { title: 'Price', field: 'price', },
-    { title: 'Action' }
+    {
+        name: 'Image',
+        selector: 'imageUrl',
+        cell: row => <div><img src={row.imageUrl} className="rounded w-50" alt="image" /></div>,
+
+    },
+    {
+        name: 'Package',
+        selector: 'packageType',
+        // lookup: { 1: 'packing', 2: 'small' },
+    },
+    {
+        name: 'Price', selector: 'price',
+    },
+    {
+        name: 'Summary', selector: 'summary',grow:3
+    },
+    {
+        name: '',
+        selector: 'edit',
+        cell: row => <div className="bg-secondary p-2 rounded text-light"><EditIcon /></div>
+    },
+    {
+        name: '',
+        selector: 'edit',
+        cell: row => <div className="bg-secondary p-2 rounded text-light"><DeleteIcon /> </div>
+    }
 
 ]
 
 
 const customData = [
-    { name: 'Mehmet', packageType: 2, imageUrl: `${ph1}`, price: 1987, },
-    { name: 'Zerya Betül', surname: 'Baran', imageUrl: `${ph1}`, price: 2017, },
+    { name: 'Mehmet', packageType: 2, imageUrl: `${ph1}`, price: 1987,summary:'blah..blah..blah..blah...1', edit: 'Edit',delete:'Delete' },
+    { name: 'Zerya Betül', packageType: 2, imageUrl: `${ph1}`, price: 2017,summary:'blah..blah..blah..blah...2', edit: 'Edit',delete:'Delete' },
 ]

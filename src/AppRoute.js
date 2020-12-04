@@ -14,7 +14,7 @@ const AppRoute = props => {
 
     return (
         <Switch>
-            <Route path='/order-edit' component={OrderAddEdit} />
+            <Route path='/order' component={OrderAddEdit} />
             <Route path="/items" component={Items} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/orders" component={Orders} />
