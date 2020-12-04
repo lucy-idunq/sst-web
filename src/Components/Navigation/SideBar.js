@@ -10,8 +10,8 @@ const SideBar = props => {
         <div style={{ height: '100vh' }}>
             <div className=" h-100 " style={{ backgroundColor: '#2F4050', color: '#fff' }}>
                 <div className="d-flex flex-column " onMouseEnter={() => setisHover(!isHover)} onMouseLeave={() => setisHover(false)} >
-                    <div className="text-center pt-4">
-                        <img src={logo} alt="logo" className="rounded-circle" width={60} />
+                    <div className="text-center pt-3">
+                        <img src={logo} alt="logo" className="rounded-circle" width={70} />
                     </div>
                     {
                         SidebarData.map((v, k) => {
@@ -30,9 +30,9 @@ const SideBar = props => {
 
 const SideBarItem = ({ icon, title, isHover }) => {
     return (
-        <div className="d-flex flex-row justify-content-center align-items-center  p-3 " style={{ cursor: `${isHover && 'pointer'}`, borderBottom: '1px solid #eee' }}>
-            <div className="text-left">{icon}</div>
-            <div className="px-4 d-none d-lg-inline flex-2">{title}</div>
+        <div className="d-flex flex-grow-1 p-3" style={{ cursor: `${isHover && 'pointer'}`, borderBottom: '1px solid #eee' }}>
+            <div className="px-1">{icon}</div>
+            <div className="px-4 d-none d-lg-inline">{title}</div>
         </div>
     )
 }
