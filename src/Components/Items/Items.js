@@ -30,6 +30,6 @@ const columns = [
 
 
 const customData = [
-    { name: 'Mehmet', packageType: 2, imageUrl: `${ph1}`, price: 1987, },
-    { name: 'Zerya Betül', surname: 'Baran', imageUrl: `${ph1}`, price: 2017, },
+    { name: 'Item 1', packageType: 2, imageUrl: 'Image/SST/1.jpg', price: 2000, },
+    { name: 'Item 2', packageType:1, imageUrl: 'Image/SST/4.jpg', price: 20000, }
 ]

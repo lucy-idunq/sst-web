@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import MaterialTable from 'material-table'
 
 const Table = props => {
-    const { title, columns, customData ,to ,history} = props
-    
+    const { title, columns, customData, to, history } = props
+
     const tableRef = React.createRef();
     const [data, setData] = useState([...customData])
     const [selectedRow, setSelectedRow] = useState(null)
@@ -59,6 +59,14 @@ const Table = props => {
                         tooltip: 'Add User',
                         isFreeAction: true,
                         onClick: (props) => history.replace(to)
+                    },
+                    {
+                        icon: 'edit',
+                        onClick: () => history.push(to)
+                    },
+                    {
+                        icon: 'delete',
+                        onClick: (rowData) => alert((rowData),null,2 )
                     }
                 ]}
             //  actions={[
