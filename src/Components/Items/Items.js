@@ -7,7 +7,8 @@ const Items = props => {
 
     return (
         <div className="pt-4">
-            <DqTable customData={customData} columns={columns} title={"Item List"} />
+            <h1>hello items</h1>
+            {/* <DqTable customData={customData} columns={columns} title={"Item List"} /> */}
         </div>
     )
 }
@@ -30,6 +31,6 @@ const columns = [
 
 
 const customData = [
-    { name: 'Item 1', packageType: 2, imageUrl: 'Image/SST/1.jpg', price: 2000, },
-    { name: 'Item 2', packageType:1, imageUrl: 'Image/SST/4.jpg', price: 20000, }
+    { name: 'Item 1', packageType: 2, imageUrl: ph1, price: 2000, },
+    { name: 'Item 2', packageType: 1, imageUrl: ph1, price: 20000, }
 ]

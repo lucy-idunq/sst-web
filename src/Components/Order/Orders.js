@@ -5,19 +5,21 @@ import DqTable from '../../common/DqTable'
 const Order = props => {
   return (
     <div>
-      <DqTable
+      <h1>hello orders</h1>
+      {/* <DqTable
         columns={columns}
         customData={customData}
         title={"Orders Table"}
-        to="/order-edit"
-      />
+        // to="/order-edit"
+        
+      /> */}
     </div>
   )
 }
 export default Order;
 
 const columns = [
-  { title: 'Profile', field: 'imageUrl', render: rowData => <img src={rowData.imageUrl} style={{ width: 40, borderRadius: '50%' }} />, filtering: false },
+  { title: 'Profile', field: 'imageUrl', render: rowData => <img src={rowData.imageUrl} alt='ph1' style={{ width: 40, borderRadius: '50%' }} />, filtering: false },
   { title: 'Name', field: 'name' },
   { title: 'Phone-no', field: 'phoneno', initialEditValue: '-' },
   { title: 'Birth Year', field: 'birthYear', type: 'numeric' },

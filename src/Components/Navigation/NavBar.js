@@ -19,7 +19,7 @@ const NavBar = props => {
                     <ul className="dropdown-menu dropdown-menu-right">
                         <li><div className="dropdown-item">User Profile</div></li>
                         <div className="dropdown-divider" />
-                        <li><div class="dropdown-item">Logout</div></li>
+                        <li><div className="dropdown-item">Logout</div></li>
                     </ul>
                 </div>
             </div>

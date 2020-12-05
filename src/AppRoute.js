@@ -14,12 +14,13 @@ const AppRoute = props => {
 
     return (
         <Switch>
+            <Route path="/register" component={Register} />
             <Route path='/order-edit' component={OrderAddEdit} />
             <Route path="/items" component={Items} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/orders" component={Orders} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route path="/" component={Login} />
+            
         </Switch>
     )
 }

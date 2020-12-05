@@ -53,22 +53,22 @@ const Table = props => {
                     },
                 }}
 
-                actions={[
-                    {
-                        icon: 'add',
-                        tooltip: 'Add User',
-                        isFreeAction: true,
-                        onClick: (props) => history.replace(to)
-                    },
-                    {
-                        icon: 'edit',
-                        onClick: () => history.push(to)
-                    },
-                    {
-                        icon: 'delete',
-                        onClick: (rowData) => alert((rowData),null,2 )
-                    }
-                ]}
+                // actions={[
+                //     {
+                //         icon: 'add',
+                //         tooltip: 'Add User',
+                //         isFreeAction: true,
+                //         onClick: (props) => history.replace(to)
+                //     },
+                //     {
+                //         icon: 'edit',
+                //         onClick: () => history.push(to)
+                //     },
+                //     {
+                //         icon: 'delete',
+                //         onClick: (rowData) => alert((rowData),null,2 )
+                //     }
+                // ]}
             //  actions={[
             // {
             //   icon: 'save',

@@ -10,9 +10,10 @@ const App = props => {
 
   const [sidebarOpen, setsidebarOpen] = useState(false)
 
-  const routeName = ['/login', '/register',]
+  const routeName = ['/', '/register',]
   return (
 
+    // v1
     <div className="container-fluid p-0">
       {
         !routeName.includes(history.location.pathname) ? (
@@ -20,9 +21,11 @@ const App = props => {
             <div className={`${sidebarOpen && 'd-none'}`}>
               <SideBar />
             </div>
-            <div className="flex-grow-1">
-              <NavBar setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
-              <AppRoute />
+            <div className="w-100">
+              <div className="flex-grow-1  bg-warning">
+                <NavBar setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
+                <AppRoute />
+              </div>
             </div>
           </div>
         )
