@@ -8,7 +8,8 @@ import NavBar from './Components/Navigation/NavBar.js';
 const App = props => {
   const { history } = props
 
-  const [sidebarOpen, setsidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [langIndex, setLangIndex] = useState(false)
 
   const routeName = ['/login', '/register',]
   return (
@@ -21,7 +22,12 @@ const App = props => {
               <SideBar />
             </div>
             <div className="flex-grow-1">
-              <NavBar setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
+              <NavBar 
+                setSidebarOpen={setSidebarOpen} 
+                sidebarOpen={sidebarOpen} 
+                setLangIndex = {setLangIndex}
+                langIndex = {langIndex}
+              />
               <AppRoute />
             </div>
           </div>

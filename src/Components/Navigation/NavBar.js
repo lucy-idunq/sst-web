@@ -4,19 +4,20 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const NavBar = props => {
-    const { setsidebarOpen, sidebarOpen } = props
+    const { setSidebarOpen, sidebarOpen } = props
+    const { setLangIndex, langIndex} = props
     return (
         <div className="d-flex flex-grow-1 align-items-center navbar bg-secondary text-light">
-            <div className="rounded p-1" style={{ cursor: 'pointer',background:'#2F4050' }} onClick={() => setsidebarOpen(!sidebarOpen)}>
+            <div className="rounded p-1" style={{ cursor: 'pointer',background:'#2F4050' }} onClick={() => setSidebarOpen(!sidebarOpen)}>
                 <ReorderIcon />
             </div>
             <div className="d-flex align-items-center">
             <div className="dropdown ">
                     <div className="nav-link dropdown-toggle" data-toggle="dropdown">Language</div>
                     <ul className="dropdown-menu dropdown-menu-right">
-                        <li><div class="dropdown-item">English</div></li>
+                        <li><div className="dropdown-item" onClick={() => setLangIndex(!langIndex)}>English</div></li>
                         <div className="dropdown-divider" />
-                        <li><div class="dropdown-item">Myanmar</div></li>
+                        <li><div className="dropdown-item" onClick={() => setLangIndex(!langIndex)}>Myanmar</div></li>
                     </ul>
                 </div>
                 <div > <NotificationsIcon /></div>
@@ -27,7 +28,7 @@ const NavBar = props => {
                     <ul className="dropdown-menu dropdown-menu-right">
                         <li><div className="dropdown-item">User Profile</div></li>
                         <div className="dropdown-divider" />
-                        <li><div class="dropdown-item">Logout</div></li>
+                        <li><div className="dropdown-item">Logout</div></li>
                     </ul>
                 </div>
             </div>

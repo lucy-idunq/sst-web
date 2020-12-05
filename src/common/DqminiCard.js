@@ -13,10 +13,10 @@ const DqminiCard = props => {
     return (
         <div className="card" style={{ ...defaultStyle }}>
             <div className="card-body">
-                <h5 class="card-title">{title}</h5>
-                {/* <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> */}
+                <h5 className="card-title">{title}</h5>
+                {/* <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6> */}
                 <div>{icon}</div>
-                <span class="card-text">{text}</span>
+                <span className="card-text">{text}</span>
 
             </div>
         </div>
