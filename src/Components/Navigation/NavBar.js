@@ -11,6 +11,14 @@ const NavBar = props => {
                 <ReorderIcon />
             </div>
             <div className="d-flex align-items-center">
+            <div className="dropdown ">
+                    <div className="nav-link dropdown-toggle" data-toggle="dropdown">Language</div>
+                    <ul className="dropdown-menu dropdown-menu-right">
+                        <li><div class="dropdown-item">English</div></li>
+                        <div className="dropdown-divider" />
+                        <li><div class="dropdown-item">Myanmar</div></li>
+                    </ul>
+                </div>
                 <div > <NotificationsIcon /></div>
                 <div className="dropdown ">
                     <div className="nav-link dropdown-toggle" data-toggle="dropdown">

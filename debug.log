@@ -88,3 +88,4 @@
 [1204/101127.993:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\iDUNQ-1\AppData\Local\Google\Chrome\User Data\Crashpad\reports\6d86e967-922c-4ebf-9f41-3a3f1306e7a3.dmp: The system cannot find the file specified. (0x2)
 [1204/101127.993:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1205/092159.428:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1205/103815.410:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
