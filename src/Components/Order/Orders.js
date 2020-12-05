@@ -1,35 +1,47 @@
 import React from 'react'
 import ph1 from '../../upload/luvph.jpg'
-import DqTable from '../../common/DqTable'
+import DqDataTable from '../../common/DqDataTable'
+
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const Order = props => {
   return (
     <div>
-      <h1>hello orders</h1>
-      {/* <DqTable
+      <h1>orders</h1>
+      <DqDataTable
+        title={"Order table"}
         columns={columns}
-        customData={customData}
-        title={"Orders Table"}
-        // to="/order-edit"
-        
-      /> */}
+        data={customData}
+      />
     </div>
   )
 }
 export default Order;
 
 const columns = [
-  { title: 'Profile', field: 'imageUrl', render: rowData => <img src={rowData.imageUrl} alt='ph1' style={{ width: 40, borderRadius: '50%' }} />, filtering: false },
-  { title: 'Name', field: 'name' },
-  { title: 'Phone-no', field: 'phoneno', initialEditValue: '-' },
-  { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
+  { name: 'Profile', selector: 'imageUrl', cell: rowData => <div><img src={rowData.imageUrl} alt="image" className="rounded" width={35} /></div> },
+  { name: 'Name', selector: 'name' },
+  { name: 'Phone-no', selector: 'phone', initialEditValue: '-' },
+  { name: 'Shop Name', selector: 'shopname' },
+  { name: 'Birth Year', selector: 'birthYear', type: 'numeric' },
   {
-    title: 'Customer Type',
-    field: 'customertype',
+    name: 'Customer Type',
+    selector: 'customertype',
     lookup: { 1: 'Wholesale', 2: 'Retailer' },
   },
-  { title: 'Address', field: 'address' },
-  { title: 'Shop Name', field: 'shopname' },
+  { name: 'Address', selector: 'address' },
+  {
+    name: '',
+    selector: 'edit',
+    cell: row => <div className="bg-secondary p-1 rounded text-light"><EditIcon /></div>
+},
+{
+    name: '',
+    selector: 'edit',
+    cell: row => <div className="bg-secondary p-1 rounded text-light"><DeleteIcon /> </div>
+}
+
 ]
 const customData = [
   { imageUrl: ph1, name: 'lucy', phone: '0978987899', shopname: 'Baran', birthYear: 1987, customertype: 1, address: 'ygn' },

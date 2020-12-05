@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom'
 import AppRoute from './AppRoute.js';
 import SideBar from './Components/Navigation/SideBar.js';
 import NavBar from './Components/Navigation/NavBar.js';
-// import Login from './Components/Login/Login'
+import BasicTable from './Components/Items/ItemAddEdit.js';
+
 
 const App = props => {
   const { history } = props
@@ -17,12 +18,12 @@ const App = props => {
     <div className="container-fluid p-0">
       {
         !routeName.includes(history.location.pathname) ? (
-          <div className="d-flex">
-            <div className={`${sidebarOpen && 'd-none'}`}>
+          <div className="d-flex flex-row">
+            <div className={`${sidebarOpen && 'd-none'} col-2 col-md-2 col-lg-1 p-0`}>
               <SideBar />
             </div>
-            <div className="w-100">
-              <div className="flex-grow-1  bg-warning">
+            <div className={`${sidebarOpen && 'col-12'} col-10 col-md-10 col-lg-11 p-0`}>
+              <div className="flex-grow-1">
                 <NavBar setsidebarOpen={setsidebarOpen} sidebarOpen={sidebarOpen} />
                 <AppRoute />
               </div>
@@ -33,7 +34,6 @@ const App = props => {
           <AppRoute />
       }
     </div>
-
   );
 }
 
