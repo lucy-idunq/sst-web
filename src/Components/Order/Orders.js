@@ -8,7 +8,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const Order = props => {
   return (
     <div>
-      <h1>orders</h1>
       <DqDataTable
         title={"Order table"}
         columns={columns}
@@ -20,8 +19,8 @@ const Order = props => {
 export default Order;
 
 const columns = [
-  { name: 'Profile', selector: 'imageUrl', cell: rowData => <div><img src={rowData.imageUrl} alt="image" className="rounded" width={35} /></div> },
   { name: 'Name', selector: 'name' },
+  { name: 'Profile', selector: 'imageUrl', cell: rowData => <div><img src={rowData.imageUrl} alt="image" className="rounded" width={35} /></div> },
   { name: 'Phone-no', selector: 'phone', initialEditValue: '-' },
   { name: 'Shop Name', selector: 'shopname' },
   { name: 'Birth Year', selector: 'birthYear', type: 'numeric' },
@@ -32,15 +31,14 @@ const columns = [
   },
   { name: 'Address', selector: 'address' },
   {
-    name: '',
-    selector: 'edit',
-    cell: row => <div className="bg-secondary p-1 rounded text-light"><EditIcon /></div>
-},
-{
-    name: '',
-    selector: 'edit',
-    cell: row => <div className="bg-secondary p-1 rounded text-light"><DeleteIcon /> </div>
-}
+    name: 'Action',
+    selector: 'actions',
+    cell: row => <div className="d-flex ">
+      <div className="bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you edit the table.')}><EditIcon /> </div>
+      <div className=" bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you delete data-row!')}><DeleteIcon /></div>
+    </div>
+  },
+  
 
 ]
 const customData = [

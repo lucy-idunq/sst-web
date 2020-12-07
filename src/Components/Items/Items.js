@@ -9,11 +9,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const Items = props => {
     return (
         <div >
-            <h1>items</h1>
             <DqDataTable
                 title={"Item table"}
                 columns={columns}
                 data={customData}
+                addNew
             />
         </div>
     )
@@ -29,7 +29,7 @@ const columns = [
     {
         name: 'Image',
         selector: 'imageUrl',
-        cell: row => <div><img src={row.imageUrl} className="rounded" alt="image" width={35}/></div>,
+        cell: row => <div><img src={row.imageUrl} className="rounded" alt="image" width={35} /></div>,
 
     },
     {
@@ -41,23 +41,21 @@ const columns = [
         name: 'Price', selector: 'price',
     },
     {
-        name: 'Summary', selector: 'summary',grow:3
+        name: 'Summary', selector: 'summary', grow: 3
     },
     {
-        name: '',
-        selector: 'edit',
-        cell: row => <div className="bg-secondary p-1 rounded text-light"><EditIcon /></div>
+        name: 'Action',
+        selector: 'actions',
+        cell: row => <div className="d-flex ">
+            <div className="bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you edit the table.')}><EditIcon /> </div>
+            <div className=" bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you delete data-row!')}><DeleteIcon /></div>
+        </div>
     },
-    {
-        name: '',
-        selector: 'edit',
-        cell: row => <div className="bg-secondary p-1 rounded text-light"><DeleteIcon /> </div>
-    }
 
 ]
 
 
 const customData = [
-    { name: 'Mehmet', packageType: 2, imageUrl: `${ph1}`, price: 1987,summary:'blah..blah..blah..blah...1', edit: 'Edit',delete:'Delete' },
-    { name: 'Zerya Betül', packageType: 2, imageUrl: `${ph1}`, price: 2017,summary:'blah..blah..blah..blah...2', edit: 'Edit',delete:'Delete' },
+    { name: 'Mehmet', packageType: 2, imageUrl: `${ph1}`, price: 1987, summary: 'blah..blah..blah..blah...1', edit: 'Edit', delete: 'Delete' },
+    { name: 'Zerya Betül', packageType: 2, imageUrl: `${ph1}`, price: 2017, summary: 'blah..blah..blah..blah...2', edit: 'Edit', delete: 'Delete' },
 ]

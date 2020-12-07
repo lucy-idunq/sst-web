@@ -1,14 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DataTable from 'react-data-table-component';
-import styled from  'styled-components'
+import styled from 'styled-components'
 
 import DqButton from './DqButton'
+import DqInput from './DqInput'
+import ClearIcon from '@material-ui/icons/Clear';
+import AddIcon from '@material-ui/icons/Add';
+import '../App.css'
 
 const DqDataTable = props => {
-    const {title,columns,data} = props
+    const { title, columns, data, addNew } = props
+
+    const [filterText, setFilterText] = React.useState('');
+    const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
+
+    const customStyles = {
+        rows: {
+            style: {
+                minHeight: '75px',
+                backgroundColor:'red'
+            }
+        },
+        borderRadius: 6,
+        whiteSpace: 'nowrap',
+        // overflow:'unset',
+    }
 
     return (
-            <DataTable
+        <DataTable
             title={title}
             columns={columns}
             data={data}
@@ -20,13 +39,41 @@ const DqDataTable = props => {
             paginationTotalRows={data.length}
             paginationDefaultPage={1}
             paginationPerPage={10}
-            style={{ borderRadius: 6, whiteSpace: 'nowrap' }}
-            />
-        
+            style={customStyles}
+            subHeader={true}
+            subHeaderComponent={getSubHeaderComponent(addNew)}
+            fixedHeader={true}
+            subHeaderWrap
+            persistTableHead
+        />
+
     )
 }
 export default DqDataTable;
 
+const SearchComponent = ({ filterText, onFilter, onClear }) => (
+    <div className="px-3">
+        <DqInput id="search" placeholder="search" />
+    </div>
+
+);
+
+const AddNewComponent = () => (
+    <div className="p-2 bg-secondary rounded text-light"
+        onClick={() => alert('Add New')}>
+        <AddIcon />
+    </div>
+)
+
+const getSubHeaderComponent = (addNew) => {
+    return (
+        <div className="d-flex align-items-center" style={{ cursor: 'pointer' }} >
+            {addNew && <AddNewComponent />}
+            <SearchComponent />
+        </div>
+
+    )
+}
 
 // const data = [
 //     { id: 1, title: 'Conan the Barbarian', summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',  year: '1982',edit: "EDIT", export: " EXPORT", remove: "REMOVE" },

@@ -6,10 +6,13 @@ const Input = props => {
     const [pwdView, setpwdView] = useState(false)
 
     const defaultStyle = {
-        boxShadow: 'none',
+        // boxShadow: 'none',
         // outline:'none',
         // border:'1px solid #eeee',
-
+        // "&:hover":{
+        //     cursor:'pointer',
+        //     border:'red'
+        // }
     }
 
     const userStyle = style === undefined ? {} : style

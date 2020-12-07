@@ -20,19 +20,17 @@ const App = props => {
       {
         !routeName.includes(history.location.pathname) ? (
           <div className="d-flex flex-row">
-            <div className={`${sidebarOpen && 'd-none'} col-2 col-md-2 col-lg-1 p-0`}>
+            <div  className={`${sidebarOpen && 'd-none'}`}>
               <SideBar />
             </div>
-            <div className={`${sidebarOpen && 'col-12'} col-10 col-md-10 col-lg-11 p-0`}>
-              <div className="flex-grow-1">
-                <NavBar 
-                  setSidebarOpen={setSidebarOpen} 
-                  sidebarOpen={sidebarOpen} 
-                  setLangIndex = {setLangIndex}
-                  langIndex = {langIndex}
-                />
-                <AppRoute />
-              </div>
+            <div className={`${sidebarOpen && 'w-100'} w-100 `}>
+              <NavBar
+                setSidebarOpen={setSidebarOpen}
+                sidebarOpen={sidebarOpen}
+                setLangIndex={setLangIndex}
+                langIndex={langIndex}
+              />
+              <AppRoute/>
             </div>
           </div>
         )
