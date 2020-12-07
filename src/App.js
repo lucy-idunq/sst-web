@@ -3,8 +3,6 @@ import { withRouter } from 'react-router-dom'
 import AppRoute from './AppRoute.js';
 import SideBar from './Components/Navigation/SideBar.js';
 import NavBar from './Components/Navigation/NavBar.js';
-import BasicTable from './Components/Items/ItemAddEdit.js';
-
 
 const App = props => {
   const { history } = props

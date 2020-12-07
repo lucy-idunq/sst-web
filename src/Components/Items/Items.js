@@ -7,6 +7,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const Items = props => {
+    const newPage = "/item"
     return (
         <div >
             <DqDataTable
@@ -14,6 +15,7 @@ const Items = props => {
                 columns={columns}
                 data={customData}
                 addNew
+                newPage={newPage}
             />
         </div>
     )
@@ -29,7 +31,7 @@ const columns = [
     {
         name: 'Image',
         selector: 'imageUrl',
-        cell: row => <div><img src={row.imageUrl} className="rounded" alt="image" width={35} /></div>,
+        cell: row => <div><img src={row.imageUrl} className="rounded" alt="pp" width={35} /></div>,
 
     },
     {
@@ -47,8 +49,8 @@ const columns = [
         name: 'Action',
         selector: 'actions',
         cell: row => <div className="d-flex ">
-            <div className="bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you edit the table.')}><EditIcon /> </div>
-            <div className=" bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you delete data-row!')}><DeleteIcon /></div>
+            <div className="bg-secondary p-1 rounded text-light" onClick={()=>alert('you edit the table.')}><EditIcon /> </div>
+            <div className=" bg-secondary p-1 mx-4 rounded text-light" onClick={()=>alert('you delete data-row!')}><DeleteIcon /></div>
         </div>
     },
 

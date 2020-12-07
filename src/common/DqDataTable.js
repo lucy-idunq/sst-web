@@ -1,29 +1,51 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 import DataTable from 'react-data-table-component';
-import styled from 'styled-components'
 
-import DqButton from './DqButton'
 import DqInput from './DqInput'
-import ClearIcon from '@material-ui/icons/Clear';
 import AddIcon from '@material-ui/icons/Add';
 import '../App.css'
 
 const DqDataTable = props => {
-    const { title, columns, data, addNew } = props
+    const { title, columns, data, addNew, newPage } = props
 
-    const [filterText, setFilterText] = React.useState('');
-    const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
+    // const [filterText, setFilterText] = React.useState('');
+    // const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
 
     const customStyles = {
         rows: {
             style: {
                 minHeight: '75px',
-                backgroundColor:'red'
+                backgroundColor: 'red'
             }
         },
         borderRadius: 6,
         whiteSpace: 'nowrap',
         // overflow:'unset',
+    }
+    const getSubHeaderComponent = (addNew) => {
+        return (
+            <div className="d-flex align-items-center" style={{ cursor: 'pointer' }} >
+                {addNew && <AddNewComponent />}
+                <SearchComponent />
+            </div>
+        )
+    }
+    const SearchComponent = ({ filterText, onFilter, onClear }) => (
+        <div className="px-3">
+            <DqInput id="search" placeholder="search" />
+        </div>
+    );
+
+    const AddNewComponent = () => {
+        return (
+            <div className="p-2 bg-secondary rounded text-light" onClick={handleNewPage} >
+                <AddIcon />
+            </div>
+        )
+    }
+    const handleNewPage = () => {
+        props.history.replace(newPage)
     }
 
     return (
@@ -49,31 +71,8 @@ const DqDataTable = props => {
 
     )
 }
-export default DqDataTable;
+export default withRouter(DqDataTable);
 
-const SearchComponent = ({ filterText, onFilter, onClear }) => (
-    <div className="px-3">
-        <DqInput id="search" placeholder="search" />
-    </div>
-
-);
-
-const AddNewComponent = () => (
-    <div className="p-2 bg-secondary rounded text-light"
-        onClick={() => alert('Add New')}>
-        <AddIcon />
-    </div>
-)
-
-const getSubHeaderComponent = (addNew) => {
-    return (
-        <div className="d-flex align-items-center" style={{ cursor: 'pointer' }} >
-            {addNew && <AddNewComponent />}
-            <SearchComponent />
-        </div>
-
-    )
-}
 
 // const data = [
 //     { id: 1, title: 'Conan the Barbarian', summary: 'Orphaned boy Conan is enslaved after his village is destroyed...',  year: '1982',edit: "EDIT", export: " EXPORT", remove: "REMOVE" },

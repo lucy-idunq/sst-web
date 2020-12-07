@@ -34,8 +34,8 @@ const columns = [
     name: 'Action',
     selector: 'actions',
     cell: row => <div className="d-flex ">
-      <div className="bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you edit the table.')}><EditIcon /> </div>
-      <div className=" bg-secondary p-1 rounded text-light mx-3" onClick={()=>alert('you delete data-row!')}><DeleteIcon /></div>
+      <div className="bg-secondary p-1 rounded text-light" onClick={()=>alert('you edit the table.')}><EditIcon /> </div>
+      <div className=" bg-secondary p-1 mx-4 rounded text-light" onClick={()=>alert('you delete data-row!')}><DeleteIcon /></div>
     </div>
   },
   

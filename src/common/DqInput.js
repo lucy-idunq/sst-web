@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Input = props => {
-    const { id, style, placeholder, type, value, width, className, onChange, pwdViewer } = props
-
-    const [pwdView, setpwdView] = useState(false)
+    const { id, style, placeholder, type, value, width, className, onChange, } = props
 
     const defaultStyle = {
-        // boxShadow: 'none',
+         boxShadow: 'none',
         // outline:'none',
         // border:'1px solid #eeee',
         // "&:hover":{
         //     cursor:'pointer',
-        //     border:'red'
         // }
     }
 
@@ -27,11 +24,6 @@ const Input = props => {
             value={value}
 
         />
-
-
-
-
-
     )
 }
 export default Input;

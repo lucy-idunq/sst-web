@@ -7,17 +7,20 @@ import Orders from './Components/Order/Orders'
 import Register from './Components/Login/Register'
 import Login from './Components/Login/Login'
 import OrderAddEdit from './Components/Order/OrderAddEdit';
+import ItemAddEdit from './Components/Items/ItemAddEdit';
 
 
 const AppRoute = props => {
 
     return (
         <Switch>
+            <Route path='/item' component={ItemAddEdit}/>
+            <Route path='/register' component={Register}/>
             <Route path='/order' component={OrderAddEdit} />
-            <Route path="/items" component={Items} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/orders" component={Orders} />
-            <Route path="/" component={Login} />
+            <Route path='/items' component={Items} />
+            <Route path='/dashboard' component={Dashboard} />
+            <Route path='/orders' component={Orders} />
+            <Route path='/' component={Login} />
             
         </Switch>
     )
