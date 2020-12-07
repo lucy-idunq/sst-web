@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+
 import DataTable from 'react-data-table-component';
 
 import DqInput from './DqInput'
@@ -7,7 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import '../App.css'
 
 const DqDataTable = props => {
-    const { title, columns, data, addNew, newPage } = props
+    const { title, columns, data, AddNew, newPage } = props
 
     // const [filterText, setFilterText] = React.useState('');
     // const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
@@ -23,10 +23,11 @@ const DqDataTable = props => {
         whiteSpace: 'nowrap',
         // overflow:'unset',
     }
-    const getSubHeaderComponent = (addNew) => {
+
+    const getSubHeaderComponent = (AddNew) => {
         return (
             <div className="d-flex align-items-center" style={{ cursor: 'pointer' }} >
-                {addNew && <AddNewComponent />}
+                {AddNew && <AddNewComponent />}
                 <SearchComponent />
             </div>
         )
@@ -39,13 +40,10 @@ const DqDataTable = props => {
 
     const AddNewComponent = () => {
         return (
-            <div className="p-2 bg-secondary rounded text-light" onClick={handleNewPage} >
+            <div className="p-2 bg-secondary rounded text-light" onClick={newPage} >
                 <AddIcon />
             </div>
         )
-    }
-    const handleNewPage = () => {
-        props.history.replace(newPage)
     }
 
     return (
@@ -63,7 +61,7 @@ const DqDataTable = props => {
             paginationPerPage={10}
             style={customStyles}
             subHeader={true}
-            subHeaderComponent={getSubHeaderComponent(addNew)}
+            subHeaderComponent={getSubHeaderComponent(AddNew)}
             fixedHeader={true}
             subHeaderWrap
             persistTableHead
@@ -71,7 +69,8 @@ const DqDataTable = props => {
 
     )
 }
-export default withRouter(DqDataTable);
+export default DqDataTable;
+
 
 
 // const data = [

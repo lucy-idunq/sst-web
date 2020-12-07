@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 // import { IMG_SERVER } from '../../network/api.config'
 import DqDataTable from '../../common/DqDataTable'
 import ph1 from '../../upload/luvph.jpg'
@@ -7,22 +8,27 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const Items = props => {
-    const newPage = "/item"
+    // const newPage = "/item"
+    const newPage =()=>{
+        alert('hello page')
+        props.history.replace('/item')
+        // conosle.log('hi new page')
+    }
     return (
         <div >
             <DqDataTable
                 title={"Item table"}
                 columns={columns}
                 data={customData}
-                addNew
-                newPage={newPage}
+                AddNew
+                newPage={newPage} 
             />
         </div>
     )
 }
 
 
-export default Items;
+export default withRouter(Items);
 const columns = [
     {
         name: 'Name',
