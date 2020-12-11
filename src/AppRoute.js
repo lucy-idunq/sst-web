@@ -21,25 +21,25 @@ import StockItem from './Components/Stocks/StockItems'
 
 
 const AppRoute = props => {
-
+    const { currentLang } = props
     return (
         <Switch>
-            <Route path='/customers' component={Customer} />
+            <Route path='/customers' render={() => <Customer currentLang={currentLang} />} />
             <Route path='/customer' component={CustomerAddEdit} />
             <Route path='/staff' component={Staff} />
             <Route path='/user-profile' component={UserProfile} />
             <Route path='/password' component={PasswordSetting} />
 
-            <Route path='/stock-item' component={StockItem}/>
+            <Route path='/stock-item' component={StockItem} />
             <Route path='/stock-in' component={StockIn} />
             <Route path='/stock-out' component={StockOut} />
             <Route path='/stock-return' component={StockReturn} />
-           
+
             <Route path='/orders' component={Orders} />
             <Route path='/order' component={OrderAddEdit} />
             <Route path='/items' component={Items} />
             <Route path='/item' component={ItemAddEdit} />
-            
+
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/register' component={Register} />
             <Route path='/' component={Login} />

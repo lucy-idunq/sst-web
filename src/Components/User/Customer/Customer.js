@@ -9,11 +9,12 @@ import DqDataTable from '../../../common/DqDataTable'
 import DqModal from '../../../common/DqModal'
 
 const Customer = props => {
-    const { history } = props
+    const { history ,currentLang } = props
 
     const customerNewPage = () => {
         history.replace('/customer')
     }
+    
     return (
         <div className="container-fluid">
             <DqDataTable
