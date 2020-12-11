@@ -14,21 +14,21 @@ const App = props => {
   return (
 
     // v1
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-0 ">
       {
         !routeName.includes(history.location.pathname) ? (
-          <div className="d-flex flex-row">
-            <div  className={`${sidebarOpen && 'd-none'}`}>
+          <div className="d-flex">
+            <div className={`${sidebarOpen && 'd-none'}`} style={{ backgroundColor: '#2F4050', }}>
               <SideBar />
             </div>
-            <div className={`${sidebarOpen && 'w-100'} w-100 `}>
+            <div className={`${sidebarOpen && 'w-100'} w-100`}>
               <NavBar
                 setSidebarOpen={setSidebarOpen}
                 sidebarOpen={sidebarOpen}
                 setLangIndex={setLangIndex}
                 langIndex={langIndex}
               />
-              <AppRoute/>
+              <AppRoute />
             </div>
           </div>
         )

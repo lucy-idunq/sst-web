@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 
 const Button = props => {
+    const { text, style, onClick, className, height, width, type } = props
+
     const [isHover, setisHover] = useState(false);
 
     const handleHover = () => {
         setisHover(!isHover);
     }
 
-    const { text, style, onClick, className, height, width, type } = props
-
     const defaultStyle = {
         // height: `${height === undefined ? "100%" : height}`,
         // width:  `${width === undefined ? "100%" : width}`,
-        backgroundColor: isHover ? '#dddd' : '#000',
-        color: isHover ? '#000' : '#dddd',
+        backgroundColor: isHover ? '#FFFF00' : '#FFFF66',
+        color: isHover ? '#000' : '#000',
         boxShadow: 'none',
         outline: 'none',
     }

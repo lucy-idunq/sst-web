@@ -7,7 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import '../App.css'
 
 const DqDataTable = props => {
-    const { title, columns, data, AddNew, newPage } = props
+    const { title, columns, data, AddNew, addnewOnClick } = props
 
     // const [filterText, setFilterText] = React.useState('');
     // const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
@@ -40,23 +40,24 @@ const DqDataTable = props => {
 
     const AddNewComponent = () => {
         return (
-            <div className="p-2 bg-secondary rounded text-light" onClick={newPage} >
+            <div className="p-2 bg-secondary rounded text-light" onClick={addnewOnClick} >
                 <AddIcon />
             </div>
         )
     }
+    const tableData = data === undefined ? [] : data;
 
     return (
         <DataTable
             title={title}
             columns={columns}
-            data={data}
+            data={tableData}
             keyField={"key"}
             striped={true}
             highlightOnHover={true}
             pointerOnHover={true}
             pagination={true}
-            paginationTotalRows={data.length}
+            paginationTotalRows={tableData.length}
             paginationDefaultPage={1}
             paginationPerPage={10}
             style={customStyles}

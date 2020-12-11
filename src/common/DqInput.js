@@ -18,7 +18,7 @@ const Input = props => {
             id={id}
             style={{ ...defaultStyle, ...userStyle }}
             placeholder={placeholder}
-            className={`form-control form-rounded ${className}`}
+            className={`form-control ${className}`}
             type={type === undefined ? 'text' : `${type}`}
             onChange={onChange}
             value={value}

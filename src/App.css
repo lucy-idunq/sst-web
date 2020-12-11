@@ -2,3 +2,13 @@
 .iNHFgB{
   overflow-y: unset!important;
 }
+
+.modal-dialog {
+  position: relative;
+  top: 20%;
+  transform: translateY(-50%)!important;
+}
+.modal-backdrop.show{
+  background-color: gray;
+  pointer-events: none;
+}

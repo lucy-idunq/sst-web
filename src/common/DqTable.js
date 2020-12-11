@@ -6,24 +6,25 @@ const Table = props => {
     const { title, columns, customData, to, history } = props
 
     const tableRef = React.createRef();
-    const [data, setData] = useState([...customData])
+    // const [data, setData] = useState([...customData])
     const [selectedRow, setSelectedRow] = useState(null)
 
-    const addNewTableData = (newData) => {
-        new Promise((resolve, reject) => {
-            setTimeout(() => {
-                setData([...data, newData]);
-                resolve();
-            }, 1000)
-        })
-    }
-
+    // const addNewTableData = (newData) => {
+    //     new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             setData([...data, newData]);
+    //             resolve();
+    //         }, 1000)
+    //     })
+    // }
+    const tableData = customData === undefined ?  [] : customData;
+    
     return (
         <div style={{ width: "100%" }}>
             <MaterialTable
                 title={title}
                 columns={columns}
-                data={data}
+                data={tableData}
                 tableRef={tableRef}
                 options={{
                     exportButton: true,
