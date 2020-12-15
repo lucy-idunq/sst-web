@@ -45,23 +45,23 @@ const PasswordSetting = props => {
 export default withRouter(PasswordSetting);
 
 // version1
-{/* <div className="container">
-    <div className="row align-items-center py-3">
-        <label for="oldPassword" className="col-3">Password </label>
-        <DqInput id="oldPassword" type="password" placeholder="password" className="col-8" />
-    </div>
+// {/* <div className="container">
+//     <div className="row align-items-center py-3">
+//         <label for="oldPassword" className="col-3">Password </label>
+//         <DqInput id="oldPassword" type="password" placeholder="password" className="col-8" />
+//     </div>
 
-    <div className="row align-items-center py-3">
-        <label for="newPassword" className="col-3">New Password </label>
-        <DqInput id="newPassword" type="password" placeholder="password" className="col-8" />
-    </div>
+//     <div className="row align-items-center py-3">
+//         <label for="newPassword" className="col-3">New Password </label>
+//         <DqInput id="newPassword" type="password" placeholder="password" className="col-8" />
+//     </div>
 
-    <div className="row align-items-center py-3">
-        <label for="confirmPassword" className="col-3">Confirm Password </label>
-        <DqInput id="confirmPassword" type="password" placeholder="password" className="col-8" />
-    </div>
+//     <div className="row align-items-center py-3">
+//         <label for="confirmPassword" className="col-3">Confirm Password </label>
+//         <DqInput id="confirmPassword" type="password" placeholder="password" className="col-8" />
+//     </div>
 
-    <div className="row justify-content-end align-items-center py-3">
-        <Dqbutton text="Save" className="px-5" style={{ width: 150 }} />
-    </div>
-</div> */}
+//     <div className="row justify-content-end align-items-center py-3">
+//         <Dqbutton text="Save" className="px-5" style={{ width: 150 }} />
+//     </div>
+// </div> */}

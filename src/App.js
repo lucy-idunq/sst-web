@@ -13,7 +13,6 @@ const App = props => {
   const routeName = ['/', '/register',]
 
   return (
-    // v1
     <div className="container-fluid p-0 ">
       {
         !routeName.includes(history.location.pathname) ? (

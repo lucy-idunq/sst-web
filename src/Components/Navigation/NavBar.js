@@ -1,7 +1,8 @@
 import React from 'react'
 
 import ReorderIcon from '@material-ui/icons/Reorder';
-// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
@@ -25,20 +26,20 @@ const NavBar = props => {
             </div>
             <div className="d-flex align-items-center">
                 <div className="dropdown nav-link" aria-haspopup="true" aria-expanded="false" style={{ cursor: 'pointer' }}>
-                    <div className="p-1 rounded " data-toggle="dropdown" style={{ background: '#2F4050' }}>
-                       {lan[currentLang].language}
-                    <span className="d-none d-sm-inline "><ArrowDropDownIcon /></span>
+                    <div className="p-2 rounded " data-toggle="dropdown" style={{ background: '#2F4050' }}>
+                        <span> {lan[currentLang].language} </span>
+                        <span className="d-none d-sm-inline "><ArrowDropDownIcon /></span>
                     </div>
                     <ul className="dropdown-menu dropdown-menu-right bg-secondary" onClick={handleLanguage} /*style={{ right: 0, left: 'auto' }}*/>
                         <li>
                             <div className="dropdown-item text-light bg-transparent" id="en">
-                            {lan[currentLang].english}
+                                {lan[currentLang].english}
                             </div>
                         </li>
                         <div className="dropdown-divider" />
                         <li>
                             <div className="dropdown-item text-light bg-transparent" id="mm">
-                            {lan[currentLang].myanmar}
+                                {lan[currentLang].myanmar}
                             </div>
                         </li>
                     </ul>
@@ -48,8 +49,11 @@ const NavBar = props => {
 
                 <div className="dropdown" aria-haspopup="true" aria-expanded="false" style={{ cursor: 'pointer' }}>
                     <div className="nav-link" data-toggle="dropdown" >
-                        {/* <AccountCircleIcon /> */}
-                        <img src={ph1} alt="pp" className="rounded-circle" width={40} height={40} />
+                        <div style={greenIconStyle}></div>
+                        <div style={imageInnerStyle}>
+                            <img src={ph1} alt="pp" className="rounded-circle" width={45} height={45} />
+                        </div>
+                        {/*  <AccountCircleIcon style={{ fontSize: 45 }} /> */}
                     </div>
                     <ul className="dropdown-menu dropdown-menu-right bg-secondary text-light">
                         <li className="dropdown-item bg-transparent">
@@ -69,3 +73,19 @@ const NavBar = props => {
 }
 
 export default NavBar;
+
+const greenIconStyle = {
+    backgroundColor: '#4cd137',
+    position: 'absolute',
+    right: '20px',
+    bottom: '10px',
+    height: '10px',
+    width: '10px',
+    borderRadius: '50%',
+    border: '1px solid #fff'
+}
+const imageInnerStyle = {
+    borderRadius: '50%',
+    padding: '1px',
+    background: '#e5e5e5',
+}

@@ -48,3 +48,34 @@ const SideBarItem = ({ icon, title, isHover, child, }) => {
 
 
 export default SideBar;
+
+{/* ======================version2======================================================================================================================================================== */ }
+{/* {
+                    SidebarData.map((v, k) => (
+                        <div className="h-100" style={{ backgroundColor: '#2F4050', color: '#fff', }} key={k}>
+                            <Link to={v.link} style={{ textDecoration: 'none', color: '#fff' }}>
+                                <div className="d-flex justify-content-center justify-content-lg-start align-items-center p-4"
+                                    data-toggle="collapse" data-target={`#${v.id}`} aria-expanded="false" aria-controls="collapseExample"
+                                    style={{ cursor: `${isHover && 'pointer'}`, borderBottom: '1px solid #eee', }}>
+                                    <div className="px-1">{v.icon}</div>
+                                    <div className="px-3 flex-grow-1 d-none d-sm-none d-md-none d-lg-inline">{v.title}</div>
+                                    {v.children && <div><ExpandMoreIcon /></div>}
+                                </div>
+                            </Link>
+                            {
+                                v.children &&
+                                v.children.map((v, k) => (
+                                    <div className="collapse" id={`${v.id}`} key={k} style={{ borderBottom: '1px solid #eee' }}>
+                                        <Link to={v.link} style={{ textDecoration: 'none', color: '#fff' }}>
+                                            <div className="d-flex justify-content-center justify-content-lg-start align-items-center p-3" >
+                                                <div className="px-2">{v.icon}</div>
+                                                <div className=" d-none d-lg-inline px-3">{v.title}</div>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    ))
+                } */}
+{/* ====================================================================================================================================================== */ }

@@ -9,7 +9,7 @@ import DqDataTable from '../../../common/DqDataTable'
 import DqModal from '../../../common/DqModal'
 
 const Customer = props => {
-    const { history ,currentLang } = props
+    const { history ,/*currentLang*/ } = props
 
     const customerNewPage = () => {
         history.replace('/customer')

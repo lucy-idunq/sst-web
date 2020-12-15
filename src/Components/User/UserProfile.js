@@ -10,21 +10,23 @@ import DqLink from '../../common/DqLink'
 const UserProfile = props => {
     return (
         <div className="container-fluid p-0">
-            <div className="d-flex flex-wrap pb-2">
-                <div className="col-lg-4 col-10">
-                    <div className="d-flex justify-content-center">
-                        <div className="position-relative mt-auto mb-auto col-4 col-lg-6 ">
-                            <div className="position-absolute d-none" style={activeIconStyle}>
-                                <FiberManualRecordIcon />
-                            </div>
-                            <img src={ph1} alt="profileImage" className="rounded-circle img-fluid " />
-                        </div>
+            <div className="d-flex flex-wrap justify-content-center pb-2">
+                <div className="col-lg-4 col-md-4 col-10">
+
+                    <div className="col-lg-4 col-md-5 col-3 p-0 mx-auto" style={{ borderRadius: '50%', border: '4px solid #e5e5e5', }}>
+                        <img src={ph1} alt="profileImage" className="rounded-circle img-fluid " />
                     </div>
-                    <div className="py-3">
-                        <div className="d-flex justify-content-between">
+
+                    <div className="py-2 text-center">
+                        <label for="upload" className="text-center"
+                            style={{ cursor: 'pointer', color: '#999' }}  >
+                            click here to change profile image
+                        <input type="file" id="upload" hidden />
+                        </label>
+                        {/* <div className="d-flex justify-content-between">
                             <div> <input type="file" className="form-control-file" id="imageUpload" /> </div>
                             <div><DqButton text="Update" /></div>
-                        </div>
+                        </div> */}
 
                     </div>
                     <div className="py-3 ">
@@ -32,7 +34,7 @@ const UserProfile = props => {
                     </div>
                 </div>
 
-                <div className="col-lg-8 col-12">
+                <div className="col-lg-8 col-md-8 col-12">
                     <div className="p-4 border border-info rounded">
 
                         <div className="text-center font-weight-bold py-2">{"Account Information"}</div>
