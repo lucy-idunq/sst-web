@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
-import { loginFetcher } from '../../network/loginFetcher'
 
+// import { loginFetcher } from '../../network/loginFetcher'
+import DqLink from '../../common/DqLink'
 
 const Login = props => {
     const [name, setName] = useState('')
     const [pwd, setPwd] = useState('')
 
     const _onClickLogIn = (name, pwd) => {
-        let info = { name, pwd }
-        loginFetcher(info, (error, data) => {
-            if (error) {
-                 console.log(error)
-                alert(JSON.stringify(data.message),null,2)
-            }
-            else if (data.success === true) {
-                alert(JSON.stringify(data.message),null,2)
-                setName('')
-                setPwd('')
-                props.history.replace(`/`)
-            }
-        })
+        props.history.replace(`/dashboard`)
+        // let info = { name, pwd } @Lucy
+        // loginFetcher(info, (error, data) => {
+        //     if (error) {
+        //          console.log(error)
+        //         alert(JSON.stringify(data.message),null,2)
+        //     }
+        //     else if (data.success === true) {
+        //         alert(JSON.stringify(data.message),null,2)
+        //         setName('')
+        //         setPwd('')
+        //         props.history.replace(`/dashboard`)
+        //     }
+        // })
     }
 
     return (
@@ -77,12 +78,18 @@ const Login = props => {
                                     className="btn float-right login_btn"
                                     onClick={() => _onClickLogIn(name, pwd)}
                                 />
-                                <input
+                                {/* <input
                                     type="button"
                                     value="Register"
                                     id="register_btn"
                                     className="btn register_btn"
                                     onClick={()=>props.history.push('/register')}
+                                /> */}
+                                <DqLink
+                                    text="Register"
+                                    to='register'
+                                    className="p-2 bg-secondary"
+                                    id="register_btn"
                                 />
                             </div>
                         </form>

@@ -1,31 +1,75 @@
 import React from 'react'
 import DataTable from 'react-data-table-component';
-import styled from  'styled-components'
 
-import DqButton from './DqButton'
+import DqInput from './DqInput'
+ import '../App.css'
 
 const DqDataTable = props => {
-    const {title,columns,data} = props
+    const { title, columns, data, AddNew, AddNewComponent, expand, ExpandComponent } = props
+
+    // const [filterText, setFilterText] = React.useState('');
+    // const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
+
+    const customStyles = {
+        rows: {
+            style: {
+                minHeight: '75px',
+            }
+        },
+        cell: {
+            style: { backgroundColor: '#E8F5F5', }
+        },
+
+        borderRadius: 6,
+        whiteSpace: 'nowrap',
+
+    }
+
+    const getSubHeaderComponent = (AddNew) => {
+        return (
+            <div className="d-flex align-items-center" style={{ cursor: 'pointer' }} >
+                {AddNew && <AddNewComponent />}
+                <SearchComponent />
+            </div>
+        )
+    }
+    const SearchComponent = ({ filterText, onFilter, onClear }) => (
+        <div className="px-3">
+            <DqInput id="search" placeholder="search" style={{ width: 250 }} />
+        </div>
+    );
+
+    const tableData = data === undefined ? [] : data;
 
     return (
-            <DataTable
+        <DataTable
             title={title}
             columns={columns}
-            data={data}
+            data={tableData}
             keyField={"key"}
-            striped={true}
+            customStyles={customStyles}
+            striped={false}
             highlightOnHover={true}
             pointerOnHover={true}
+            // selectableRows
+            subHeader={true}
+            subHeaderComponent={getSubHeaderComponent(AddNew)}
+            fixedHeader={true}
+            persistTableHead
+            subHeaderWrap
+            expandableRows={expand ? true : false}
+            expandableRowsComponent={expand && <ExpandComponent />}
+            expandOnRowClicked={true}
             pagination={true}
-            paginationTotalRows={data.length}
+            paginationTotalRows={tableData.length}
             paginationDefaultPage={1}
             paginationPerPage={10}
-            style={{ borderRadius: 6, whiteSpace: 'nowrap' }}
-            />
-        
+            theme={'dark'}
+        />
     )
 }
 export default DqDataTable;
+
 
 
 // const data = [
