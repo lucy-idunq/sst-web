@@ -9,7 +9,7 @@ import DqLink from '../../common/DqLink'
 
 const UserProfile = props => {
     return (
-        <div className="container-fluid p-0">
+        <div className="pt-3">
             <div className="d-flex flex-wrap justify-content-center pb-2">
                 <div className="col-lg-4 col-md-4 col-10">
 

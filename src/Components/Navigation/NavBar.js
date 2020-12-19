@@ -1,8 +1,8 @@
 import React from 'react'
 
 import ReorderIcon from '@material-ui/icons/Reorder';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+// import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
@@ -19,10 +19,10 @@ const NavBar = props => {
     }
 
     return (
-        <div className="d-flex flex-wrap align-items-center navbar bg-secondary text-light" /*style={{position:'relative',right:0}}*/  >
+        <div className="d-flex flex-wrap align-items-center navbar mb-0 text-light bg-dark" style={{  }}/*style={{position:'relative',right:0,backgroundColor: '#b5341d'}}*/  >
             {/* <div className="container-fluid"> */}
-            <div className="rounded p-1" style={{ cursor: 'pointer', background: '#2F4050' }} onClick={() => setSidebarOpen(!sidebarOpen)}>
-                <ReorderIcon />
+            <div className="rounded p-1" style={{ cursor: 'pointer', background: '#b2b2b2' }} onClick={() => setSidebarOpen(!sidebarOpen)}>
+                <ReorderIcon style={{fontSize:28}}/>
             </div>
             <div className="d-flex align-items-center">
                 <div className="dropdown nav-link" aria-haspopup="true" aria-expanded="false" style={{ cursor: 'pointer' }}>
@@ -86,6 +86,6 @@ const greenIconStyle = {
 }
 const imageInnerStyle = {
     borderRadius: '50%',
-    padding: '1px',
+    padding: '1px 2px',
     background: '#e5e5e5',
 }

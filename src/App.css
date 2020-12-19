@@ -1,14 +1,25 @@
 /* react-data-table */
-.iNHFgB{
-  overflow-y: unset!important;
+.iNHFgB {
+  overflow-y: unset !important;
+}
+.gbjtWJ {
+  background-color: transparent !important ;
+  /* background-color: #e8f5f5 !important; */
+}
+.judJDM {
+  background-color:transparent !important;
+  /* background-color: #e8f5f5 !important; */
+}
+.ggwjZM{
+  background-color:#e8f5f5 !important;
 }
 
 .modal-dialog {
   position: relative;
   top: 20%;
-  transform: translateY(-50%)!important;
+  transform: translateY(-50%) !important;
 }
-.modal-backdrop.show{
+.modal-backdrop.show {
   background-color: gray;
   pointer-events: none;
 }

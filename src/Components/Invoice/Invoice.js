@@ -2,22 +2,22 @@ import React from 'react'
 
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import AddIcon from '@material-ui/icons/Add';
 
-import DqDataTable from '../../../common/DqDataTable'
-import DqModal from '../../../common/DqModal'
-import DqLink from '../../../common/DqLink'
+import DqDataTable from '../../common/DqDataTable'
+import  DqLink from '../../common/DqLink'
+import DqModal from '../../common/DqModal'
 
-const Staff = props => {
+const Invoice = props => {
     const AddNewComponent = () => (
         <div className="p-2 bg-secondary rounded text-light" >
-            <DqLink to="/staffs" text={<PersonAddIcon />} />
+            <DqLink to="/invoice" text={<AddIcon />} />
         </div>
     )
     return (
-        <div className="container-fluid">
+        <div >
             <DqDataTable
-                title={"Staff Table"}
+                title={"Invoice"}
                 columns={columns}
                 AddNew
                 AddNewComponent={AddNewComponent}
@@ -26,46 +26,35 @@ const Staff = props => {
 
     )
 }
-export default Staff;
+export default Invoice;
 
 const columns = [
     {
-        name: 'Staff Id',
-        selector: 'staffId'
+        name: 'Invoice Id',
+        selector: 'invoiceId'
     },
     {
-        name: 'Name',
-        selector: 'name'
+        name: 'Item Name',
+        selector: 'itemnName'
     },
     {
-        name: 'Image',
-        selector: 'imageUrl',
-        cell: row => <div><img src={row.imageUrl} className="rounded" alt="pp" width={35} /></div>,
-
+        name: 'Packaging',
+        selector: 'packaging',
     },
     {
-        name: 'Phone no',
-        selector: 'phoneno',
+        name: 'Price', selector: 'price',
     },
     {
-        name: 'Gmail', selector: 'gmail',
+        name: 'Discount%', selector: 'discountPer',
     },
     {
-        name: 'Address', selector: 'address',
+        name: 'Discount Amount', selector: 'discountAmount',
     },
     {
-        name: 'Position',
-        selector: 'position'
+        name: 'Total Amount', selector: 'totalAmount',
     },
     {
-        name: 'Branch',
-        selector: 'branch'
-    },
-    {
-        name: 'Join Date', selector: 'joinDate',
-    },
-    {
-        name: 'Summary', selector: 'summary', grow: 3
+        name: 'Status', selector: 'status',
     },
     {
         name: 'Action',
@@ -78,5 +67,4 @@ const columns = [
             </div>
         </div>
     },
-
 ]

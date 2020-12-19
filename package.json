@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "bootstrap": "^4.5.3",
+    "bootstrap-icons": "^1.2.1",
     "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.22",
     "material-table": "^1.69.2",

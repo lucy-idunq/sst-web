@@ -21,19 +21,21 @@ import PersonIcon from '@material-ui/icons/Person';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import FaceIcon from '@material-ui/icons/Face';
 import StorageIcon from '@material-ui/icons/Storage';
+// import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
+import AirportShuttleIcon from '@material-ui/icons/AirportShuttle';
 
 const SideBar = props => {
-    const { currentLang } = props
-    const [divID, setdivID] = useState(1)
-    const [IconChange, setIconChange] = useState(false)
+    const { currentLang, divID, setdivID } = props
+    const [IconChange, setIconChange] = useState(false) //currently not using@lucy
 
     const onClickDiv = (id) => {
+        console.log(id)
         setdivID(id);
         setIconChange(!IconChange);
     }
     // console.log(divID)
     return (
-        <div style={{ height: '100vh', backgroundColor: '#2F4050' }}>
+        <div className="bg-dark" style={{ height: '100vh', /*'#801500' */}}>
             <div className="d-flex flex-column " >
                 <div className="text-center pt-3">
                     <img src={logo} alt="logo" className="rounded-circle" width={70} />
@@ -68,8 +70,9 @@ const SideBar = props => {
                 <SidebarItem title={lan[currentLang].users} icon={<SupervisorAccountIcon />} id={12} divID={divID}
                     subItem subItemId='users' subItemList={[
                         { id: 13, icon: <PersonIcon />, title: lan[currentLang].customer, link: '/customers', },
-                        { id: 14, icon: <AssignmentIndIcon />, title: lan[currentLang].staff, link: '/staff', },
-                        { id: 15, icon: <FaceIcon />, title: lan[currentLang].admin, link: '/admin', }
+                        { id: 14, icon: <AssignmentIndIcon />, title: lan[currentLang].staff, link: '/staffs', },
+                        { id: 15, icon: <AirportShuttleIcon />, title: lan[currentLang].deliver, link: '/delivers', },
+                        { id: 16, icon: <FaceIcon />, title: lan[currentLang].admin, link: '/admin', },
                     ]}
                     IconChange={IconChange} onClick={onClickDiv}
                 />
@@ -79,18 +82,17 @@ const SideBar = props => {
 }
 
 const SidebarItem = ({ title, icon, id, divID, subItem, subItemId, subItemList, onClick, IconChange }) => (
-    <div className="h-100" style={{ backgroundColor: '#2F4050', }}>
+    <div className="h-100 bg-dark" /*style={{ backgroundColor: '#801500', }}*/>
         <div id={id} onClick={() => onClick(id)}
             data-toggle="collapse" data-target={`#${subItemId}`} aria-expanded="false"
             className="d-flex justify-content-center justify-content-lg-start align-items-center p-3"
             style={{
-                // borderBottom: '1px solid #eee',
                 cursor: subItem && 'pointer',
                 color: `${divID === id ? '#EFFD5F' : "#fff"}`,
-                borderLeft: `3px solid ${divID === id ? '#EFFD5F' : "#00000000"}`
+                borderRight: `3px solid ${divID === id ? '#EFFD5F' : "#00000000"}`
             }}>
             <div className="px-1">{icon}</div>
-            <div className="px-3 flex-grow-1 d-none d-sm-none d-md-none d-lg-inline">
+            <div className="px-3 flex-grow-1 d-none d-lg-inline">
                 {title}
             </div>
             <div> {subItem && <span><ExpandMoreIcon /></span>}</div>
@@ -99,13 +101,12 @@ const SidebarItem = ({ title, icon, id, divID, subItem, subItemId, subItemList, 
             subItemList &&
             subItemList.map((v, k) => (
                 <div id={`${subItemId}`} onClick={() => onClick(v.id)}
-                    className="collapse" key={k}
-                   /* style={{ borderBottom: '1px solid #eee' }}*/>
+                    className="collapse" key={k}>
                     <Link to={v.link} style={LinkStyle}>
                         <div className="d-flex justify-content-center justify-content-lg-start align-items-center p-3"
-                            style={{ color: `${divID === v.id ? '#EFFD5F' : "#fff"}`, borderLeft: `3px solid ${divID === v.id ? '#EFFD5F' : "#00000000"}` }}>
-                            <div className="px-2">{v.icon}</div>
-                            <div className=" d-none d-lg-inline px-3">{v.title}</div>
+                            style={{ color: `${divID === v.id ? '#EFFD5F' : "#fff"}`, borderRight: `3px solid ${divID === v.id ? '#EFFD5F' : "#00000000"}` }}>
+                            <div className="px-1">{v.icon}</div>
+                            <div className="px-2 flex-grow-1 d-none d-lg-inline">{v.title}</div>
                         </div>
                     </Link>
                 </div>

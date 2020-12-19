@@ -1,13 +1,11 @@
-import React from 'react'
-
+import React,{useState} from 'react'
 import DataTable from 'react-data-table-component';
 
 import DqInput from './DqInput'
-import AddIcon from '@material-ui/icons/Add';
-import '../App.css'
+ import '../App.css'
 
 const DqDataTable = props => {
-    const { title, columns, data, AddNew, addnewOnClick } = props
+    const { title, columns, data, AddNew, AddNewComponent, expand, ExpandComponent } = props
 
     // const [filterText, setFilterText] = React.useState('');
     // const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
@@ -16,12 +14,15 @@ const DqDataTable = props => {
         rows: {
             style: {
                 minHeight: '75px',
-                backgroundColor: 'red'
             }
         },
+        cell: {
+            style: { backgroundColor: '#E8F5F5', }
+        },
+
         borderRadius: 6,
         whiteSpace: 'nowrap',
-        // overflow:'unset',
+
     }
 
     const getSubHeaderComponent = (AddNew) => {
@@ -34,17 +35,10 @@ const DqDataTable = props => {
     }
     const SearchComponent = ({ filterText, onFilter, onClear }) => (
         <div className="px-3">
-            <DqInput id="search" placeholder="search" />
+            <DqInput id="search" placeholder="search" style={{ width: 250 }} />
         </div>
     );
 
-    const AddNewComponent = () => {
-        return (
-            <div className="p-2 bg-secondary rounded text-light" onClick={addnewOnClick} >
-                <AddIcon />
-            </div>
-        )
-    }
     const tableData = data === undefined ? [] : data;
 
     return (
@@ -53,21 +47,25 @@ const DqDataTable = props => {
             columns={columns}
             data={tableData}
             keyField={"key"}
-            striped={true}
+            customStyles={customStyles}
+            striped={false}
             highlightOnHover={true}
             pointerOnHover={true}
+            // selectableRows
+            subHeader={true}
+            subHeaderComponent={getSubHeaderComponent(AddNew)}
+            fixedHeader={true}
+            persistTableHead
+            subHeaderWrap
+            expandableRows={expand ? true : false}
+            expandableRowsComponent={expand && <ExpandComponent />}
+            expandOnRowClicked={true}
             pagination={true}
             paginationTotalRows={tableData.length}
             paginationDefaultPage={1}
             paginationPerPage={10}
-            style={customStyles}
-            subHeader={true}
-            subHeaderComponent={getSubHeaderComponent(AddNew)}
-            fixedHeader={true}
-            subHeaderWrap
-            persistTableHead
+            theme={'dark'}
         />
-
     )
 }
 export default DqDataTable;

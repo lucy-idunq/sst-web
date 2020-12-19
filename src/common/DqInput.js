@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Input = props => {
-    const { id, style, placeholder, type, value, width, className, onChange, } = props
+    const { id, style, placeholder, type, value, className, onChange, } = props
 
     const defaultStyle = {
          boxShadow: 'none',

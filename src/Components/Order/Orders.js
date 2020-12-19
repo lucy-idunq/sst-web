@@ -1,42 +1,59 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
 import ph1 from '../../upload/luvph.jpg'
 import DqDataTable from '../../common/DqDataTable'
 import DqModal from '../../common/DqModal'
-import Breadcrumb from '../../common/Breadcrumb'
 
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const Order = props => {
-  const {location} = props
+ // const { location } = props
+ const ExpandComponent =()=>{
+   return(
+     <div className="p-4">It's expand component</div>
+   )
+ }
   return (
-    <div className="container-fluid">
-      <div>
-        {/* <Breadcrumb crumbs={location.pathname.slice(1)}  /> */}
-      </div>
-      <DqDataTable
+    <div>
+    
+    <DqDataTable
         title={"Order Table"}
         columns={columns}
         data={customData}
+        expand
+        ExpandComponent={ExpandComponent}
       />
     </div>
   )
 }
-export default withRouter(Order);
+export default Order;
 
 const columns = [
-  { name: 'Name', selector: 'name' },
-  { name: 'Profile', selector: 'imageUrl', cell: rowData => <div><img src={rowData.imageUrl} alt="pp" className="rounded" width={35} /></div> },
-  { name: 'Phone-no', selector: 'phone', initialEditValue: '-' },
-  { name: 'Shop Name', selector: 'shopname' },
-  { name: 'Birth Year', selector: 'birthYear', type: 'numeric' },
+  { name: 'OrderId', selector: 'orderId' },
   {
-    name: 'Customer Type',
+    name: 'Customer', selector: 'customer', grow: 2,
+     cell: rowData => 
+     <div className="d-flex justify-content-between align-items-center">
+       <div><img src={rowData.imageUrl} alt="pp" className="rounded" width={35} /></div>
+       <div className="px-4">{rowData.customer} </div>
+    </div>
+  },
+  { name: 'Address', selector: 'address' },
+
+  { name: 'Ordered', selector: 'orderDate' },
+  {
+    name: 'CustomerType',
     selector: 'customertype',
     lookup: { 1: 'Wholesale', 2: 'Retailer' },
   },
-  { name: 'Address', selector: 'address' },
+  { name: 'Total', selector: 'total' },
+  { name: 'Status', selector: 'status', 
+    cell: rowData => 
+    <div className=" p-2 border rounded">
+      <span><i class="fa fa-circle" aria-hidden="true"></i></span> 
+      <span> {rowData.status}</span>
+  </div>
+},
   {
     name: 'Action',
     selector: 'actions',
@@ -51,10 +68,15 @@ const columns = [
 ]
 
 const customData = [
-  { imageUrl: ph1, name: 'lucy', phone: '0978987899', shopname: 'Baran', birthYear: 1987, customertype: 1, address: 'ygn' },
-  { imageUrl: ph1, name: 'sumyat', phone: '0978987899', shopname: 'Baran', birthYear: 2017, customertype: 2, address: 'mdy' },
-  { imageUrl: ph1, name: 'sumyat', phone: '0978987899', shopname: 'Baran', birthYear: 2017, customertype: 2, address: 'mdy' },
-  { imageUrl: ph1, name: 'sumyat', phone: '0978987899', shopname: 'Baran', birthYear: 2017, customertype: 2, address: 'mdy' },
-  { imageUrl: ph1, name: 'lucy', phone: '0978987899', shopname: 'Baran', birthYear: 1987, customertype: 1, address: 'ygn' },
-  { imageUrl: ph1, name: 'lucy', phone: '0978987899', shopname: 'Baran', birthYear: 1987, customertype: 1, address: 'ygn' },
+  { id: '1', orderId: '#10001', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19870, customertype: 'wholesale', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10002', imageUrl: ph1, customer: 'sumyat', phone: '0978987899', total: 20170, customertype: 'retail', address: 'mdy', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10003', imageUrl: ph1, customer: 'sumyat', phone: '0978987899', total: 20170, customertype: 'wholesale', address: 'mdy', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10004', imageUrl: ph1, customer: 'sumyat', phone: '0978987899', total: 20107, customertype: 'retail', address: 'mdy', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10005', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'wholesale', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
 ]

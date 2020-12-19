@@ -20,6 +20,7 @@ export default {
         customer: "mmCustomer",
         staff: "mmStaff",
         admin: "mmAdmin",
+        deliver:"mm-Deliver"
     },
     en: {
         language: "Language",
@@ -42,6 +43,7 @@ export default {
         customer: "Customer",
         staff: "Staff",
         admin: "Admin",
+        deliver:"Deliver",
     },
 
 

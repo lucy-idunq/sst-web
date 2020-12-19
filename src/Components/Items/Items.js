@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom'
+import React from 'react';
 
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 
 // import { IMG_SERVER } from '../../network/api.config'
 import DqDataTable from '../../common/DqDataTable'
 import DqModal from '../../common/DqModal'
+import DqLink from '../../common/DqLink'
 // import Breadcrumb from '../../common/Breadcrumb'
 import ph1 from '../../upload/luvph.jpg'
 
 const Items = props => {
-    const {history} = props
     // const [crumbs, setCrumbs] = useState(['items', 'item', 'addItem']);
 
-    const newPage = () => {
-        history.replace('/item')
-        // conosle.log('hi new page') location.pathname.slice(1)
-    }
+    const AddNewComponent = () => (
+        <div className="p-2 bg-secondary rounded text-light" >
+            <DqLink to="/item" text={<PlaylistAddIcon />} />
+        </div>
+    )
 
     return (
-        <div className="container-fluid">
+        <div className="">
             {/* <div>
                 <Breadcrumb crumbs={crumbs} />
             </div> */}
@@ -29,13 +30,13 @@ const Items = props => {
                 columns={columns}
                 data={customData}
                 AddNew
-                addnewOnClick={newPage}
+                AddNewComponent={AddNewComponent}
             />
         </div>
     )
 }
 
-export default withRouter(Items);
+export default Items;
 
 const columns = [
     {

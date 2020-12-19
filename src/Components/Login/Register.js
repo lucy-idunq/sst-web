@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { newRegisterData } from '../../network/registerFetcher'
+// import { newRegisterData } from '../../network/registerFetcher'
 import DqInput from '../../common/DqInput'
 import DqSelect from '../../common/DqSelect'
 import DqButton from '../../common/DqButton'
+import DqLink from '../../common/DqLink'
 
 const Register = props => {
     const [userName, setuserName] = useState('')
@@ -21,16 +22,16 @@ const Register = props => {
     const [password, setpassword] = useState('')
     const [confirmPassword, setconfirmPassword] = useState('')
 
-  
+
     const registerSubmit = (e) => {
         e.preventDefault();
-        let customerType = selectedCustomerType.value 
-        
+        let customerType = selectedCustomerType.value
+
         let info = { userName, phone, email, address, shopName, shopLocation, latitude, longitude, customerType, password, confirmPassword }
         alert(JSON.stringify(info), null, 2)
 
     }
- 
+
     return (
         <div>
             <div className="Login d-flex justify-content-center">
@@ -39,7 +40,7 @@ const Register = props => {
                         <h3>Register</h3>
                     </div>
                     <div className="card-body login-body">
-                        <form onSubmit={e => registerSubmit(e)}>
+                        <form /*onSubmit={e => registerSubmit(e)}*/>
                             <div className="input-group form-group  pb-2">
                                 <InputGroupContainer icon="fa fa-user" />
                                 <DqInput id='name' placeholder="Name" onChange={(e) => setuserName(e.target.value)} value={userName} value={userName} />
@@ -89,7 +90,9 @@ const Register = props => {
 
                             <div className="d-flex justify-content-around">
                                 <DqButton text="Register" type="submit" />
-                                <DqButton text="Cancel" />
+                                <div className="p-3 rounded" style={{ background: '#FFFF66' }}>
+                                    <DqLink text="Cancel" to="/login" className="text-dark font-weight-bold" />
+                                </div>
                             </div>
                         </form>
                     </div>

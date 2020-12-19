@@ -18,15 +18,21 @@ import Staff from './Components/User/Staff/Staff'
 import StockOut from './Components/Stocks/StockOut';
 import StockReturn from './Components/Stocks/StockReturn';
 import StockItem from './Components/Stocks/StockItems'
-
+import Deliver from './Components/User/Deliver/Deliver';
+import Invoice from './Components/Invoice/Invoice';
+import Admin from './Components/User/Admin/Admin';
 
 const AppRoute = props => {
     const { currentLang } = props
     return (
         <Switch>
+            <Route path='/invoice' component={Invoice} />
+            <Route path='/delivers' component={Deliver} />
+
+            <Route path='/admin' component={Admin} />
             <Route path='/customers' render={() => <Customer currentLang={currentLang} />} />
             <Route path='/customer' component={CustomerAddEdit} />
-            <Route path='/staff' component={Staff} />
+            <Route path='/staffs' component={Staff} />
             <Route path='/user-profile' component={UserProfile} />
             <Route path='/password' component={PasswordSetting} />
 
@@ -42,8 +48,8 @@ const AppRoute = props => {
 
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/register' component={Register} />
-            <Route path='/' component={Login} />
-            {/* <Redirect to="/login" /> */}
+            <Route path='/login' component={Login} />
+            <Redirect to="/login" />
 
         </Switch>
     )

@@ -1,32 +1,23 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
-import ph1 from '../../../upload/luvph.jpg'
 import DqDataTable from '../../../common/DqDataTable'
 import DqModal from '../../../common/DqModal'
 import DqLink from '../../../common/DqLink'
 
-const Customer = props => {
-    const { history,/*currentLang*/ } = props
-
-    const customerNewPage = () => {
-        history.replace('/customer')
-    }
+const Deliver = props => {
     const AddNewComponent = () => (
         <div className="p-2 bg-secondary rounded text-light" >
-           <DqLink to="/customer" text={<PersonAddIcon/>} />
+            <DqLink to="/delivers" text={<PersonAddIcon />} />
         </div>
     )
-
     return (
         <div className="container-fluid">
             <DqDataTable
-                title={"Customer Table"}
-                data={customData}
+                title={"Deliver"}
                 columns={columns}
                 AddNew
                 AddNewComponent={AddNewComponent}
@@ -35,9 +26,13 @@ const Customer = props => {
 
     )
 }
-export default withRouter(Customer);
+export default Deliver;
 
 const columns = [
+    {
+        name: 'Deliver Id',
+        selector: 'deliverId'
+    },
     {
         name: 'Name',
         selector: 'name'
@@ -51,19 +46,18 @@ const columns = [
     {
         name: 'Phone no',
         selector: 'phoneno',
-        // lookup: { 1: 'packing', 2: 'small' },
+    },
+    {
+        name: 'Gmail', selector: 'gmail',
     },
     {
         name: 'Address', selector: 'address',
     },
     {
-        name: 'Location', selector: 'location',
+        name: 'Join Date', selector: 'joinDate',
     },
     {
-        name: 'Customer Type', selector: 'customerType', grow: 1
-    },
-    {
-        name: 'Summary', selector: 'summary', grow: 3
+        name: 'Status', selector: 'status', 
     },
     {
         name: 'Action',
@@ -77,9 +71,4 @@ const columns = [
         </div>
     },
 
-]
-
-const customData = [
-    { name: 'lucy', imageUrl: `${ph1}`, phoneno: '0989930890', address: 'chanAyetharzan mdy', location: 'mdy', customerType: 'wholesale', summary: 'blah blah blah blach.....' },
-    { name: 'sumyat', imageUrl: `${ph1}`, phoneno: '0989930890', address: 'chanAyetharzan mdy', location: 'ygn', customerType: 'retail', summary: 'blah blah blah blach.....' },
 ]

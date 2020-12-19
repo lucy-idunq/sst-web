@@ -7,7 +7,7 @@ import DqLink from '../../common/DqLink'
 
 const PasswordSetting = props => {
     return (
-        <div className="container">
+        <div className="container pt-3">
 
             <div className="col-12 py-3">
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
