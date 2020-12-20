@@ -1,10 +1,12 @@
 import React from 'react'
 
-const OrderAddEdit = props =>{
-    return(
-        <h1>
-            order edit
-        </h1>
+const OrderAddEdit = props => {
+    const { isEdit, row } = props
+
+    return (
+       <div className="container">
+           row
+       </div>
     )
 }
 

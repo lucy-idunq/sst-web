@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 
 import Dashboard from './Components/Dashboard/Dashboard'
 import Items from './Components/Items/Items'
@@ -23,7 +23,7 @@ import Invoice from './Components/Invoice/Invoice';
 import Admin from './Components/User/Admin/Admin';
 
 const AppRoute = props => {
-    const { currentLang } = props
+    const { currentLang ,history} = props
     return (
         <Switch>
             <Route path='/invoice' component={Invoice} />
@@ -41,7 +41,7 @@ const AppRoute = props => {
             <Route path='/stock-out' component={StockOut} />
             <Route path='/stock-return' component={StockReturn} />
 
-            <Route path='/orders' component={Orders} />
+            <Route path='/orders' render={() => <Orders history={history} /> } />
             <Route path='/order' component={OrderAddEdit} />
             <Route path='/items' component={Items} />
             <Route path='/item' component={ItemAddEdit} />
@@ -54,4 +54,4 @@ const AppRoute = props => {
         </Switch>
     )
 }
-export default AppRoute;
+export default withRouter(AppRoute);

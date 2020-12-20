@@ -1,7 +1,5 @@
 import React from 'react'
 
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-
 import ph1 from '../../upload/luvph.jpg'
 import DqInput from '../../common/DqInput'
 import DqButton from '../../common/DqButton'
@@ -80,13 +78,3 @@ const UserProfile = props => {
     )
 }
 export default UserProfile;
-
-const activeIconStyle = {
-    right: '25px',
-    bottom: '38px',
-    borderRadius: '50%',
-    border: '2px solid #fff',
-    backgroundColor: '#4cd137',
-    color: '#4cd137',
-    textAlign: 'center',
-}

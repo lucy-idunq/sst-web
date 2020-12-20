@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import DataTable, { createTheme } from 'react-data-table-component';
 
 import DqInput from './DqInput'
@@ -6,7 +6,7 @@ import DqInput from './DqInput'
 const DqDataTable = props => {
     const { columns, data, AddNew, AddNewComponent, expand, ExpandComponent } = props
 
-    const [filterText, setFilterText] = React.useState('');
+    const [filterText, setFilterText] = useState('');
 
     const getSubHeaderComponent = (AddNew) => {
         return (
@@ -22,7 +22,6 @@ const DqDataTable = props => {
 
     const searchResult = tableData && tableData
         .filter((item) => item.name.toLowerCase().includes(filterText))
-    // .map((element) => (element));
 
     return (
         <DataTable

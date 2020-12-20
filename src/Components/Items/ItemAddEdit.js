@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import DqInput from '../../common/DqInput'
@@ -7,7 +7,9 @@ import DqButton from '../../common/DqButton'
 import DqLink from '../../common/DqLink'
 
 const ItemAddEdit = props => {
-    const [checked, setChecked] = React.useState(false);
+    const { isEdit, row } = props
+    console.log(isEdit)
+    const [checked, setChecked] = useState(false);
 
     return (
         <div className="container border border-info rounded mt-4">

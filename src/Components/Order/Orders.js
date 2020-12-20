@@ -1,32 +1,20 @@
 import React from 'react'
-import ph1 from '../../upload/luvph.jpg'
-import DqDataTable from '../../common/DqDataTable'
-import DqModal from '../../common/DqModal'
 
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const Order = props => {
- // const { location } = props
- const ExpandComponent =()=>{
-   return(
-     <div className="p-4 " style={{borderBottom:'1px solid #dcdcdc'}}>It's expand component</div>
-   )
- }
-  return (
-    <div>
-    <DqDataTable
-        columns={columns}
-        data={customData}
-        expand
-        ExpandComponent={ExpandComponent}
-      />
-    </div>
-  )
-}
-export default Order;
+import ph1 from '../../upload/luvph.jpg'
+import DqDataTable from '../../common/DqDataTable'
+import DqModal from '../../common/DqModal'
+import OrderAddEdit from './OrderAddEdit'
 
-const columns = [
+const Order = props => {
+  const { history } = props
+
+ const onEditClick=(row)=>{
+  console.log(row)
+}
+ const columns = [
   { name: 'OrderId', selector: 'orderId' },
   {
     name: 'Customer', selector: 'name', grow: 2,
@@ -57,7 +45,7 @@ const columns = [
     name: 'Action',
     selector: 'actions',
     cell: row => <div className="d-flex ">
-      <div className="bg-secondary p-1 rounded text-light" onClick={() => alert('you edit the table.')}><EditIcon /> </div>
+      <div className="bg-secondary p-1 rounded text-light" onClick={()=>onEditClick(row)}><EditIcon /> </div>
       <div className=" bg-secondary p-1 mx-4 rounded text-light" data-toggle="modal" data-target="#deleteOrder">
         <DeleteIcon />
         <DqModal id={"deleteOrder"} text={"Are you sure to delete this order?"} title={"Delete Modal"} />
@@ -65,6 +53,27 @@ const columns = [
     </div>
   },
 ]
+
+const ExpandComponent =()=>{
+  return(
+    <div className="p-4 " style={{borderBottom:'1px solid #dcdcdc'}}>It's expand component</div>
+  )
+}
+  return (
+    <div>
+    <DqDataTable
+        columns={columns}
+        data={customData}
+        expand
+        ExpandComponent={ExpandComponent}
+      />
+    </div>
+  )
+}
+
+export default Order;
+
+
 
 const customData = [
   { id: '1', orderId: '#10001', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19870, customertype: 'wholesale', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
