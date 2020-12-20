@@ -48,7 +48,7 @@ const DqDataTable = props => {
             data={tableData}
             keyField={"key"}
             customStyles={customStyles}
-            striped={false}
+            striped={true}
             highlightOnHover={true}
             pointerOnHover={true}
             // selectableRows
@@ -64,7 +64,7 @@ const DqDataTable = props => {
             paginationTotalRows={tableData.length}
             paginationDefaultPage={1}
             paginationPerPage={10}
-            theme={'dark'}
+           
         />
     )
 }

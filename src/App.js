@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import AppRoute from './AppRoute.js';
 import SideBar from './Components/Navigation/SideBar.js';
 import NavBar from './Components/Navigation/NavBar.js';
-
+// import ErrorBoundary from './ErrorBoundary'
 
 const App = props => {
   const { history } = props
@@ -31,7 +31,7 @@ const App = props => {
     else if (history.location.pathname === "/staffs") setdivID(14);
     else if (history.location.pathname === "/delivers") setdivID(15);
     else if (history.location.pathname === "/admin") setdivID(16);
-  },[history.location.pathname])
+  }, [history.location.pathname])
 
   return (
     <div className="container-fluid p-0 ">
@@ -39,23 +39,26 @@ const App = props => {
         !routeName.includes(history.location.pathname) ? (
           <div className="d-flex">
             <div className={`${sidebarOpen && 'd-none'} bg-dark`} >
-              <SideBar currentLang={currentLang} divID={divID} setdivID={setdivID} />
+              <SideBar currentLang={currentLang} divID={divID} setdivID={setdivID} /> 
             </div>
             <div className={`${sidebarOpen && 'w-100'} w-100`}>
-              <NavBar
-                setSidebarOpen={setSidebarOpen}
-                sidebarOpen={sidebarOpen}
-                setcurrentLang={setcurrentLang}
-                currentLang={currentLang}
-              />
-              <AppRoute currentLang={currentLang} />
+                <NavBar
+                  setSidebarOpen={setSidebarOpen}
+                  sidebarOpen={sidebarOpen}
+                  setcurrentLang={setcurrentLang}
+                  currentLang={currentLang}
+                />
+                <AppRoute currentLang={currentLang} />
+             
             </div>
           </div>
         )
           :
-          <AppRoute currentLang={currentLang} />
+         <AppRoute currentLang={currentLang} />
       }
     </div>
+
+
   );
 }
 

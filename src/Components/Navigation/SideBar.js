@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 // import { SidebarData } from './SidebarData'
 import logo from '../../upload/sst.jpg'
 import lan from '../../Utils/lan.config'
+import Error from '../../ErrorBoundary'
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
@@ -29,11 +30,10 @@ const SideBar = props => {
     const [IconChange, setIconChange] = useState(false) //currently not using@lucy
 
     const onClickDiv = (id) => {
-        console.log(id)
         setdivID(id);
         setIconChange(!IconChange);
     }
-    // console.log(divID)
+    const lang =  currentLang ===  undefined ? 'en' : currentLang
     return (
         <div className="bg-dark" style={{ height: '100vh', /*'#801500' */}}>
             <div className="d-flex flex-column " >
@@ -41,38 +41,38 @@ const SideBar = props => {
                     <img src={logo} alt="logo" className="rounded-circle" width={70} />
                 </div>
                 <Link to={'/dashboard'} style={LinkStyle}>
-                    <SidebarItem title={lan[currentLang].dashboard} icon={<DashboardIcon />} id={1} divID={divID} onClick={onClickDiv} />
+                    <SidebarItem title={lan[lang].dashboard} icon={<DashboardIcon />} id={1} divID={divID} onClick={onClickDiv} />
                 </Link>
                 <Link to={'/orders'} style={LinkStyle}>
-                    <SidebarItem title={lan[currentLang].order} icon={<ShoppingBasketIcon />} id={2} divID={divID} onClick={onClickDiv} />
+                    <SidebarItem title={lan[lang].order} icon={<ShoppingBasketIcon />} id={2} divID={divID} onClick={onClickDiv} />
                 </Link>
                 <Link to={'/items'} style={LinkStyle}>
-                    <SidebarItem title={lan[currentLang].item} icon={<ListIcon />} id={3} divID={divID} onClick={onClickDiv} />
+                    <SidebarItem title={lan[lang].item} icon={<ListIcon />} id={3} divID={divID} onClick={onClickDiv} />
                 </Link>
                 <Link to={'/invoice'} style={LinkStyle}>
-                    <SidebarItem title={lan[currentLang].invoice} icon={<DescriptionIcon />} id={4} divID={divID} onClick={onClickDiv} />
+                    <SidebarItem title={lan[lang].invoice} icon={<DescriptionIcon />} id={4} divID={divID} onClick={onClickDiv} />
                 </Link>
                 <Link to={'/delivery'} style={LinkStyle}>
-                    <SidebarItem title={lan[currentLang].delivery} icon={<DepartureBoardIcon />} id={5} divID={divID} onClick={onClickDiv} />
+                    <SidebarItem title={lan[lang].delivery} icon={<DepartureBoardIcon />} id={5} divID={divID} onClick={onClickDiv} />
                 </Link>
                 <Link to={'/warehouse'} style={LinkStyle}>
-                    <SidebarItem title={lan[currentLang].warehouse} icon={<HouseTwoToneIcon />} id={6} divID={divID} onClick={onClickDiv} />
+                    <SidebarItem title={lan[lang].warehouse} icon={<HouseTwoToneIcon />} id={6} divID={divID} onClick={onClickDiv} />
                 </Link>
-                <SidebarItem title={lan[currentLang].stocks} icon={<ShowChartIcon />} id={7} divID={divID}
+                <SidebarItem title={lan[lang].stocks} icon={<ShowChartIcon />} id={7} divID={divID}
                     subItem subItemId='stocks' subItemList={[
-                        { id: 8, icon: <StorageIcon />, title: lan[currentLang].stockItem, link: '/stock-item' },
-                        { id: 9, icon: <InboxIcon />, title: lan[currentLang].stockIn, link: '/stock-in' },
-                        { id: 10, icon: <AllOutIcon />, title: lan[currentLang].stockOut, link: '/stock-out' },
-                        { id: 11, icon: <KeyboardReturnIcon />, title: lan[currentLang].stockReturn, link: '/stock-return' }
+                        { id: 8, icon: <StorageIcon />, title: lan[lang].stockItem, link: '/stock-item' },
+                        { id: 9, icon: <InboxIcon />, title: lan[lang].stockIn, link: '/stock-in' },
+                        { id: 10, icon: <AllOutIcon />, title: lan[lang].stockOut, link: '/stock-out' },
+                        { id: 11, icon: <KeyboardReturnIcon />, title: lan[lang].stockReturn, link: '/stock-return' }
                     ]}
                     IconChange={IconChange} onClick={onClickDiv}
                 />
-                <SidebarItem title={lan[currentLang].users} icon={<SupervisorAccountIcon />} id={12} divID={divID}
+                <SidebarItem title={lan[lang].users} icon={<SupervisorAccountIcon />} id={12} divID={divID}
                     subItem subItemId='users' subItemList={[
-                        { id: 13, icon: <PersonIcon />, title: lan[currentLang].customer, link: '/customers', },
-                        { id: 14, icon: <AssignmentIndIcon />, title: lan[currentLang].staff, link: '/staffs', },
-                        { id: 15, icon: <AirportShuttleIcon />, title: lan[currentLang].deliver, link: '/delivers', },
-                        { id: 16, icon: <FaceIcon />, title: lan[currentLang].admin, link: '/admin', },
+                        { id: 13, icon: <PersonIcon />, title: lan[lang].customer, link: '/customers', },
+                        { id: 14, icon: <AssignmentIndIcon />, title: lan[lang].staff, link: '/staffs', },
+                        { id: 15, icon: <AirportShuttleIcon />, title: lan[lang].deliver, link: '/delivers', },
+                        { id: 16, icon: <FaceIcon />, title: lan[lang].admin, link: '/admin', },
                     ]}
                     IconChange={IconChange} onClick={onClickDiv}
                 />

@@ -15,11 +15,12 @@ const NavBar = props => {
     // const { setLangIndex, langIndex } = props
 
     const handleLanguage = (e) => {
-        setcurrentLang(e.target.id)
+        let language = e.target.id === '' || undefined ? 'en' : e.target.id
+        setcurrentLang(language)
     }
-
+    const lang =  currentLang ===  undefined  ? 'en' : currentLang
     return (
-        <div className="d-flex flex-wrap align-items-center navbar mb-0 text-light bg-dark" style={{  }}/*style={{position:'relative',right:0,backgroundColor: '#b5341d'}}*/  >
+        <div className="d-flex flex-wrap align-items-center navbar mb-0 text-light bg-dark" /*style={{position:'relative',right:0,backgroundColor: '#b5341d'}}*/  >
             {/* <div className="container-fluid"> */}
             <div className="rounded p-1" style={{ cursor: 'pointer', background: '#b2b2b2' }} onClick={() => setSidebarOpen(!sidebarOpen)}>
                 <ReorderIcon style={{fontSize:28}}/>
@@ -27,19 +28,19 @@ const NavBar = props => {
             <div className="d-flex align-items-center">
                 <div className="dropdown nav-link" aria-haspopup="true" aria-expanded="false" style={{ cursor: 'pointer' }}>
                     <div className="p-2 rounded " data-toggle="dropdown" style={{ background: '#2F4050' }}>
-                        <span> {lan[currentLang].language} </span>
+                        <span> {lan[lang].language} </span>
                         <span className="d-none d-sm-inline "><ArrowDropDownIcon /></span>
                     </div>
                     <ul className="dropdown-menu dropdown-menu-right bg-secondary" onClick={handleLanguage} /*style={{ right: 0, left: 'auto' }}*/>
                         <li>
                             <div className="dropdown-item text-light bg-transparent" id="en">
-                                {lan[currentLang].english}
+                                {lan[lang].english}
                             </div>
                         </li>
                         <div className="dropdown-divider" />
                         <li>
                             <div className="dropdown-item text-light bg-transparent" id="mm">
-                                {lan[currentLang].myanmar}
+                                {lan[lang].myanmar}
                             </div>
                         </li>
                     </ul>
@@ -57,11 +58,11 @@ const NavBar = props => {
                     </div>
                     <ul className="dropdown-menu dropdown-menu-right bg-secondary text-light">
                         <li className="dropdown-item bg-transparent">
-                            <DqLink text={lan[currentLang].profile} to={'/user-profile'} />
+                            <DqLink text={lan[lang].profile} to={'/user-profile'} />
                         </li>
                         <div className="dropdown-divider " />
                         <li className="dropdown-item bg-transparent text-white text-center">
-                            <div>{lan[currentLang].logOut}</div>
+                            <div>{lan[lang].logOut}</div>
                         </li>
                     </ul>
                 </div>

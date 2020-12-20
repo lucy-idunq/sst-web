@@ -50,9 +50,9 @@ const columns = [
   { name: 'Status', selector: 'status', 
   grow:1,
     cell: rowData => 
-    <div className="px-2 py-1 border rounded" style={{color:`${rowData.status === 'ongoing' ? '#ffd500': rowData.status === 'pending'?  'red':'green'}`}}>
-      <span><i class="fa fa-circle"></i></span> 
-      <span className="px-1"> {rowData.status}</span>
+    <div className="d-flex justify-content-around align-items-center px-2 py-1 border rounded" style={{color:`${rowData.status === 'ongoing' ? '#ffd500': rowData.status === 'pending'?  'red':'green'}`,width:90}}>
+      <div><i className="fa fa-circle"></i></div> 
+      <div className=""> {rowData.status}</div>
   </div>
 },
   {

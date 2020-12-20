@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const Button = props => {
-    const { text, style, onClick, className, height, width, type } = props
+    const { text, style, onClick, className, type } = props
 
     const [isHover, setisHover] = useState(false);
 
