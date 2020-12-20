@@ -10,14 +10,12 @@ const Order = props => {
  // const { location } = props
  const ExpandComponent =()=>{
    return(
-     <div className="p-4">It's expand component</div>
+     <div className="p-4 " style={{borderBottom:'1px solid #dcdcdc'}}>It's expand component</div>
    )
  }
   return (
     <div>
-    
     <DqDataTable
-        title={"Order Table"}
         columns={columns}
         data={customData}
         expand
@@ -31,11 +29,11 @@ export default Order;
 const columns = [
   { name: 'OrderId', selector: 'orderId' },
   {
-    name: 'Customer', selector: 'customer', grow: 2,
+    name: 'Customer', selector: 'name', grow: 2,
      cell: rowData => 
      <div className="d-flex justify-content-between align-items-center">
        <div><img src={rowData.imageUrl} alt="pp" className="rounded" width={35} /></div>
-       <div className="px-4">{rowData.customer} </div>
+       <div className="px-4">{rowData.name} </div>
     </div>
   },
   { name: 'Address', selector: 'address' },
@@ -69,15 +67,15 @@ const columns = [
 ]
 
 const customData = [
-  { id: '1', orderId: '#10001', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19870, customertype: 'wholesale', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
-  { id: '1', orderId: '#10002', imageUrl: ph1, customer: 'sumyat', phone: '0978987899', total: 20170, customertype: 'retail', address: 'mdy', orderDate: '21-11-2020', status: 'deliver ' },
-  { id: '1', orderId: '#10003', imageUrl: ph1, customer: 'sumyat', phone: '0978987899', total: 20170, customertype: 'wholesale', address: 'mdy', orderDate: '21-11-2020', status: 'deliver ' },
-  { id: '1', orderId: '#10004', imageUrl: ph1, customer: 'sumyat', phone: '0978987899', total: 20107, customertype: 'retail', address: 'mdy', orderDate: '21-11-2020', status: 'pending' },
-  { id: '1', orderId: '#10005', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'wholesale', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
-  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'deliver' },
-  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'pending' },
-  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'deliver ' },
-  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'pending' },
-  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
-  { id: '1', orderId: '#10006', imageUrl: ph1, customer: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'deliver ' },
+  { id: '1', orderId: '#10001', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19870, customertype: 'wholesale', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10002', imageUrl: ph1, name: 'sumyat', phone: '0978987899', total: 20170, customertype: 'retail', address: 'mdy', orderDate: '21-11-2020', status: 'deliver ' },
+  { id: '1', orderId: '#10003', imageUrl: ph1, name: 'sumyat', phone: '0978987899', total: 20170, customertype: 'wholesale', address: 'mdy', orderDate: '21-11-2020', status: 'deliver ' },
+  { id: '1', orderId: '#10004', imageUrl: ph1, name: 'sumyat', phone: '0978987899', total: 20107, customertype: 'retail', address: 'mdy', orderDate: '21-11-2020', status: 'pending' },
+  { id: '1', orderId: '#10005', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19807, customertype: 'wholesale', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'deliver' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'pending' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'deliver ' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'pending' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'ongoing' },
+  { id: '1', orderId: '#10006', imageUrl: ph1, name: 'lucy', phone: '0978987899', total: 19807, customertype: 'retail', address: 'ygn', orderDate: '21-11-2020', status: 'deliver ' },
 ]

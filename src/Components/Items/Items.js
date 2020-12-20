@@ -26,7 +26,6 @@ const Items = props => {
                 <Breadcrumb crumbs={crumbs} />
             </div> */}
             <DqDataTable
-                title={"Item Table"}
                 columns={columns}
                 data={customData}
                 AddNew

@@ -25,7 +25,6 @@ const Customer = props => {
     return (
         <div>
             <DqDataTable
-                title={"Customer Table"}
                 data={customData}
                 columns={columns}
                 AddNew

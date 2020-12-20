@@ -19,7 +19,7 @@ const App = props => {
     else if (history.location.pathname === "/orders") setdivID(2);
     else if (history.location.pathname === "/items") setdivID(3);
     else if (history.location.pathname === "/invoice") setdivID(4);
-    else if (history.location.pathname === "/delivery") setdivID(5);
+    // else if (history.location.pathname === "/delivery") setdivID(5);
     else if (history.location.pathname === "/warehouse") setdivID(6);
     // else if (history.location.pathname === "/") setdivID(7);
     else if (history.location.pathname === "/stock-item") setdivID(8);
@@ -39,22 +39,22 @@ const App = props => {
         !routeName.includes(history.location.pathname) ? (
           <div className="d-flex">
             <div className={`${sidebarOpen && 'd-none'} bg-dark`} >
-              <SideBar currentLang={currentLang} divID={divID} setdivID={setdivID} /> 
+              <SideBar currentLang={currentLang} divID={divID} setdivID={setdivID} />
             </div>
             <div className={`${sidebarOpen && 'w-100'} w-100`}>
-                <NavBar
-                  setSidebarOpen={setSidebarOpen}
-                  sidebarOpen={sidebarOpen}
-                  setcurrentLang={setcurrentLang}
-                  currentLang={currentLang}
-                />
-                <AppRoute currentLang={currentLang} />
-             
+              <NavBar
+                setSidebarOpen={setSidebarOpen}
+                sidebarOpen={sidebarOpen}
+                setcurrentLang={setcurrentLang}
+                currentLang={currentLang}
+              />
+              <AppRoute currentLang={currentLang} />
+
             </div>
           </div>
         )
           :
-         <AppRoute currentLang={currentLang} />
+          <AppRoute currentLang={currentLang} />
       }
     </div>
 

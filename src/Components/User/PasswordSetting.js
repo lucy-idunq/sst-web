@@ -7,34 +7,34 @@ import DqLink from '../../common/DqLink'
 
 const PasswordSetting = props => {
     return (
-        <div className="container pt-3">
+        <div className="container pt-3 mt-4 border border-info rounded">
 
-            <div className="col-12 py-3">
+            <div className="col-12 py-3 mt-3">
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
-                    <div className="col-lg-3 p-0">Password</div>
-                    <div className="col-12 col-lg-8 p-0">
+                    <div className="col-lg-3">Password</div>
+                    <div className="col-12 col-lg-8">
                         <DqInput id="oldPassword" type="password" placeholder="password" />
                     </div>
                 </div>
             </div>
             <div className="col-12 py-3">
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
-                    <div className="col-lg-3 p-0">New Password</div>
-                    <div className="col-12 col-lg-8 p-0">
+                    <div className="col-lg-3">New Password</div>
+                    <div className="col-12 col-lg-8">
                         <DqInput id="newPassword" type="password" placeholder="password" />
                     </div>
                 </div>
             </div>
             <div className="col-12 py-3">
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
-                    <div className="col-lg-3 p-0">Confirm Password</div>
-                    <div className="col-12 col-lg-8 p-0">
+                    <div className="col-lg-3">Confirm Password</div>
+                    <div className="col-12 col-lg-8">
                         <DqInput id="confirmPassword" type="password" placeholder="password" />
                     </div>
                 </div>
             </div>
-            <div className="d-flex flex-wrap justify-content-end p-3">
-                <DqButton text="Save" className="col-4 col-lg-2 mx-3" />
+            <div className="d-flex flex-wrap justify-content-end px-4 py-3 mb-3">
+                <DqButton text="Save" className="col-4 col-lg-2 mx-3 " />
                 <DqLink text="Cancel" to={"/user-profile"} className="border rounded  p-2 col-4 col-lg-2 text-dark" style={{ backgroundColor: '#FFFF66' }} />
             </div>
 

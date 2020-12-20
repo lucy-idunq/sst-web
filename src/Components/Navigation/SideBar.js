@@ -52,9 +52,9 @@ const SideBar = props => {
                 <Link to={'/invoice'} style={LinkStyle}>
                     <SidebarItem title={lan[lang].invoice} icon={<DescriptionIcon />} id={4} divID={divID} onClick={onClickDiv} />
                 </Link>
-                <Link to={'/delivery'} style={LinkStyle}>
+                {/* <Link to={'/delivery'} style={LinkStyle}>
                     <SidebarItem title={lan[lang].delivery} icon={<DepartureBoardIcon />} id={5} divID={divID} onClick={onClickDiv} />
-                </Link>
+                </Link> */}
                 <Link to={'/warehouse'} style={LinkStyle}>
                     <SidebarItem title={lan[lang].warehouse} icon={<HouseTwoToneIcon />} id={6} divID={divID} onClick={onClickDiv} />
                 </Link>
