@@ -1,26 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import DqInput from '../../common/DqInput'
 import DqSelect from '../../common/DqSelect'
 import DqButton from '../../common/DqButton'
-import DqLink from '../../common/DqLink'
 
 const ItemAddEdit = props => {
-    const { isEdit, row } = props
-    console.log(isEdit)
+    const { setIsEdit, isEdit, setIsAdd, setIsMain, row, name, setName } = props
     const [checked, setChecked] = useState(false);
+
+    const onCancel = () => {
+        setIsMain(true)
+        setIsEdit(false)
+        setIsAdd(false)
+    }
+    const EditForm = () => {
+        isEdit &&
+        setName(row.name)
+
+    }
+    useEffect(() => {
+        EditForm()
+    })
 
     return (
         <div className="container border border-info rounded mt-4">
-            <div className="d-flex justify-content-end p-4">
+            {/* <div className="d-flex justify-content-end p-4">
                 <DqLink text="Back" to={"/items"} className="border rounded  p-2 col-lg-1 col-md-2 col-3 text-dark" style={{ backgroundColor: '#FFFF66' }} />
-                {/* <DqButton text="Back" style={{ width: 80 }} onClick={backOnclick} /> */}
-            </div>
-            <div className="col-12 py-3">
+            </div> */}
+            <div className="col-12 py-3 mt-3">
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
                     <div className="col-lg-4">Name </div>
-                    <div className="col-12 col-lg-8"><DqInput id="name" /></div>
+                    <div className="col-12 col-lg-8"><DqInput id="name" value={name} /></div>
                 </div>
             </div>
 
@@ -94,15 +105,15 @@ const ItemAddEdit = props => {
             <div className="col-12 py-3 mb-3">
                 <div className="d-flex justify-content-end px-3">
                     <div className="px-3"><DqButton text="Save" style={{ width: 150 }} /> </div>
-                    <div ><DqButton text="Cancel" style={{ width: 150 }} /></div>
+                    <div ><DqButton text="Cancel" style={{ width: 150 }} onClick={onCancel} /></div>
                 </div>
             </div>
 
         </div>
     )
 }
-export default withRouter(ItemAddEdit);
 
+export default withRouter(ItemAddEdit);
 const PackageType = [
     { value: 'box', label: 'Box' },
     { value: 'packing', label: 'Packing' },

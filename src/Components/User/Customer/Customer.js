@@ -13,9 +13,7 @@ import DqLink from '../../../common/DqLink'
 const Customer = props => {
     const { history,/*currentLang*/ } = props
 
-    const customerNewPage = () => {
-        history.replace('/customer')
-    }
+    
     const AddNewComponent = () => (
         <div className="p-2 bg-secondary rounded text-light" >
            <DqLink to="/customer" text={<PersonAddIcon/>} />

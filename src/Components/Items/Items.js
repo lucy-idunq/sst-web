@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -7,23 +7,30 @@ import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 // import { IMG_SERVER } from '../../network/api.config'
 import DqDataTable from '../../common/DqDataTable'
 import DqModal from '../../common/DqModal'
-import DqLink from '../../common/DqLink'
-// import Breadcrumb from '../../common/Breadcrumb'
+import DqButton from '../../common/DqButton'
 import ph1 from '../../upload/luvph.jpg'
+import ItemAddEdit from './ItemAddEdit'
 
 const Items = props => {
-    // const [crumbs, setCrumbs] = useState(['items', 'item', 'addItem']);
+    // const { history } = props
 
-    const AddNewComponent = () => (
-        <div className="p-2 bg-secondary rounded text-light" >
-            <DqLink to="/item" text={<PlaylistAddIcon />} />
-        </div>
-    )
+    const [isEdit, setIsEdit] = useState(false)
+    const [isAdd, setIsAdd] = useState(false)
+    const [isMain, setIsMain] = useState(true)
+    const [editRowData, setEditRowData] = useState([])
 
-    const onEditClick = (row) => {
-        console.log(row)
+    const [name, setName] = useState('')
+
+    const onAddClick = () => {
+        setIsMain(false)
+        setIsAdd(true)
     }
-
+    const onEditClick = (row) => {
+        setIsMain(false)
+        setIsEdit(true)
+        setEditRowData(row)
+    }
+   
     const columns = [
         {
             name: 'Name',
@@ -38,7 +45,6 @@ const Items = props => {
         {
             name: 'Package',
             selector: 'packageType',
-            // lookup: { 1: 'packing', 2: 'small' },
         },
         {
             name: 'Price', selector: 'price',
@@ -59,14 +65,44 @@ const Items = props => {
         },
     ]
 
+    const AddNewComponent = () => (
+        <div className="p-2 rounded text-light" >
+            {/* <DqLink to="/item" text={<PlaylistAddIcon />} /> */}
+            <DqButton text={<PlaylistAddIcon />} onClick={onAddClick} />
+        </div>
+    )
+
+
     return (
-        <div className="">
-            <DqDataTable
-                columns={columns}
-                data={customData}
-                AddNew
-                AddNewComponent={AddNewComponent}
-            />
+        <div>
+            {
+                isMain ?
+                    <DqDataTable
+                        columns={columns}
+                        data={customData}
+                        AddNew
+                        AddNewComponent={AddNewComponent}
+                    />
+                    :
+                    <ItemAddEdit
+                        row={editRowData}
+                        setIsEdit={setIsEdit}
+                        setIsAdd={setIsAdd}
+                        setIsMain={setIsMain}
+                        isAdd={isAdd}
+                        isEdit={isEdit}
+                        isMain={isMain}
+
+                        name={name}
+                        setName={setName}
+                    />
+            }
+
+
+
+
+
+
         </div>
     )
 }

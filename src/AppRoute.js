@@ -7,9 +7,7 @@ import Orders from './Components/Order/Orders'
 import Register from './Components/Login/Register'
 import Login from './Components/Login/Login'
 import OrderAddEdit from './Components/Order/OrderAddEdit';
-import ItemAddEdit from './Components/Items/ItemAddEdit';
 import PasswordSetting from './Components/User/PasswordSetting';
-import UserContainer from './Components/User/UserContainer';
 import StockIn from './Components/Stocks/StockIn';
 import CustomerAddEdit from './Components/User/Customer/CustomerAddEdit';
 import UserProfile from './Components/User/UserProfile';
@@ -43,8 +41,7 @@ const AppRoute = props => {
 
             <Route path='/orders' render={() => <Orders history={history} /> } />
             <Route path='/order' component={OrderAddEdit} />
-            <Route path='/items' component={Items} />
-            <Route path='/item' component={ItemAddEdit} />
+            <Route path='/items' render={()=><Items history={history}/>} />
 
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/register' component={Register} />
